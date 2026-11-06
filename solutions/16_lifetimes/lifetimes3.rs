@@ -1,7 +1,7 @@
-// Lifetimes are also needed when structs hold references.
+// Lifetimes também são necessários quando structs armazenam referências.
 
 struct Book<'a> {
-    //     ^^^^ added a lifetime annotation
+    //     ^^^^ anotação de lifetime adicionada
     author: &'a str,
     //       ^^
     title: &'a str,

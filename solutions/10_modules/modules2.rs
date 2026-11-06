@@ -1,5 +1,5 @@
 mod delicious_snacks {
-    // Added `pub` and used the expected alias after `as`.
+    // Foi adicionado `pub` e usado o alias esperado depois de `as`.
     pub use self::fruits::PEAR as FRUIT;
     pub use self::veggies::CUCUMBER as VEGGIE;
 

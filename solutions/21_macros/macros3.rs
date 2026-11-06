@@ -1,4 +1,4 @@
-// Added the `macro_use` attribute.
+// Foi adicionado o atributo `macro_use`.
 #[macro_use]
 mod macros {
     macro_rules! my_macro {

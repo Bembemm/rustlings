@@ -1,14 +1,14 @@
-// A list of scores (one per line) of a soccer match is given. Each line is of
-// the form "<team_1_name>,<team_2_name>,<team_1_goals>,<team_2_goals>"
-// Example: "England,France,4,2" (England scored 4 goals, France 2).
+// Foi fornecida uma lista de placares de futebol, um por linha. Cada linha tem
+// o formato "<team_1_name>,<team_2_name>,<team_1_goals>,<team_2_goals>"
+// Exemplo: "England,France,4,2" (England marcou 4 gols e France marcou 2).
 //
-// You have to build a table of scores containing the name of the team, the total
-// number of goals the team scored, and the total number of goals the team
-// conceded.
+// Você deve montar uma tabela com o nome de cada time, o total
+// de gols marcados e o total de gols que o time
+// sofreu.
 
 use std::collections::HashMap;
 
-// A structure to store the goal details of a team.
+// Estrutura para armazenar as estatísticas de gols de um time.
 #[derive(Default)]
 struct TeamScores {
     goals_scored: u8,
@@ -16,24 +16,24 @@ struct TeamScores {
 }
 
 fn build_score_table(results: &str) -> HashMap<&str, TeamScores> {
-    // The name of the team is the key and its associated struct is the value.
+    // O nome do time é a chave, e a struct associada é o valor.
     let mut scores = HashMap::<&str, TeamScores>::new();
 
     for line in results.lines() {
         let mut split_iterator = line.split(',');
-        // NOTE: We use `unwrap` because we haven't dealt with error handling yet.
+        // OBSERVAÇÃO: usamos `unwrap` porque ainda não estudamos tratamento de erros.
         let team_1_name = split_iterator.next().unwrap();
         let team_2_name = split_iterator.next().unwrap();
         let team_1_score: u8 = split_iterator.next().unwrap().parse().unwrap();
         let team_2_score: u8 = split_iterator.next().unwrap().parse().unwrap();
 
-        // Insert the default with zeros if a team doesn't exist yet.
+        // Insira o valor padrão, com zeros, se o time ainda não existir.
         let team_1 = scores.entry(team_1_name).or_default();
-        // Update the values.
+        // Atualize os valores.
         team_1.goals_scored += team_1_score;
         team_1.goals_conceded += team_2_score;
 
-        // Similarly for the second team.
+        // Faça o mesmo para o segundo time.
         let team_2 = scores.entry(team_2_name).or_default();
         team_2.goals_scored += team_2_score;
         team_2.goals_conceded += team_1_score;
@@ -43,7 +43,7 @@ fn build_score_table(results: &str) -> HashMap<&str, TeamScores> {
 }
 
 fn main() {
-    // You can optionally experiment here.
+    // Se quiser, você pode fazer experimentos aqui.
 }
 
 #[cfg(test)]

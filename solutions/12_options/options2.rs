@@ -1,5 +1,5 @@
 fn main() {
-    // You can optionally experiment here.
+    // Se quiser, você pode fazer experimentos aqui.
 }
 
 #[cfg(test)]
@@ -9,7 +9,7 @@ mod tests {
         let target = "rustlings";
         let optional_target = Some(target);
 
-        // if-let
+        // `if let`
         if let Some(word) = optional_target {
             assert_eq!(word, target);
         }
@@ -26,7 +26,7 @@ mod tests {
 
         let mut cursor = range;
 
-        // while-let with nested pattern matching
+        // `while let` com correspondência de padrões aninhada
         while let Some(Some(integer)) = optional_integers.pop() {
             assert_eq!(integer, cursor);
             cursor -= 1;

@@ -3,7 +3,7 @@ fn elems_to_vec(a: i32, b: i32, c: i32) -> Vec<i32> {
 }
 
 fn main() {
-    // You can optionally experiment here.
+    // Se quiser, você pode fazer experimentos aqui.
 }
 
 #[cfg(test)]

@@ -1,5 +1,5 @@
 fn main() {
-    // Congratulations, you finished the first exercise 🎉
-    // As an introduction to Rustlings, the first exercise only required
-    // entering `n` in the terminal to go to the next exercise.
+    // Parabéns, você concluiu o primeiro exercício 🎉
+    // Como introdução ao Rustlings, o primeiro exercício exigia apenas
+    // digitar `n` no terminal para avançar ao próximo exercício.
 }

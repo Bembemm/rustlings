@@ -1,5 +1,5 @@
 fn square(num: i32) -> i32 {
-    // Removed the semicolon `;` at the end of the line below to implicitly return the result.
+    // O ponto e vírgula `;` foi removido do fim da linha abaixo para retornar o resultado implicitamente.
     num * num
 }
 

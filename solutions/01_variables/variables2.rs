@@ -1,11 +1,11 @@
 fn main() {
-    // The easiest way to fix the compiler error is to initialize the
-    // variable `x`. By setting its value to an integer, Rust infers its type
-    // as `i32` which is the default type for integers.
+    // A forma mais simples de corrigir o erro do compilador é inicializar a
+    // variável `x`. Ao atribuir um inteiro, Rust infere o tipo
+    // como `i32`, que é o tipo inteiro padrão.
     let x = 42;
 
-    // But we can enforce a type different from the default `i32` by adding
-    // a type annotation:
+    // Também podemos forçar um tipo diferente do `i32` padrão adicionando
+    // uma anotação de tipo:
     // let x: u8 = 42;
 
     if x == 10 {

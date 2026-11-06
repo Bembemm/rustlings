@@ -3,7 +3,7 @@ mod sausage_factory {
         String::from("Ginger")
     }
 
-    // Added `pub` before `fn` to make the function accessible outside the module.
+    // Foi adicionado `pub` antes de `fn` para tornar a função acessível fora do módulo.
     pub fn make_sausage() {
         get_secret_recipe();
         println!("sausage!");

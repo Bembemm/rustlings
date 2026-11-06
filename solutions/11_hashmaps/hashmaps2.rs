@@ -1,12 +1,12 @@
-// We're collecting different fruits to bake a delicious fruit cake. For this,
-// we have a basket, which we'll represent in the form of a hash map. The key
-// represents the name of each fruit we collect and the value represents how
-// many of that particular fruit we have collected. Three types of fruits -
-// Apple (4), Mango (2) and Lychee (5) are already in the basket hash map. You
-// must add fruit to the basket so that there is at least one of each kind and
-// more than 11 in total - we have a lot of mouths to feed. You are not allowed
-// to insert any more of the fruits that are already in the basket (Apple,
-// Mango, and Lychee).
+// Estamos juntando frutas para fazer um bolo delicioso. Para isso,
+// usamos uma cesta representada por um hash map. A chave
+// representa o tipo de fruta, e o valor indica quantas
+// unidades foram coletadas. Três tipos de fruta —
+// Apple (4), Mango (2) e Lychee (5) — já estão na cesta. Você
+// deve adicionar frutas para que exista pelo menos uma de cada tipo e
+// mais de 11 ao todo. Você não pode
+// aumentar a quantidade dos tipos que já estão na cesta (Apple,
+// Mango e Lychee).
 
 use std::collections::HashMap;
 
@@ -29,20 +29,20 @@ fn fruit_basket(basket: &mut HashMap<Fruit, u32>) {
     ];
 
     for fruit in fruit_kinds {
-        // If fruit doesn't exist, insert it with some value.
+        // Se a fruta ainda não existir, insira-a com algum valor.
         basket.entry(fruit).or_insert(5);
     }
 }
 
 fn main() {
-    // You can optionally experiment here.
+    // Se quiser, você pode fazer experimentos aqui.
 }
 
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    // Don't modify this function!
+    // Não altere esta função!
     fn get_fruit_basket() -> HashMap<Fruit, u32> {
         let content = [(Fruit::Apple, 4), (Fruit::Mango, 2), (Fruit::Lychee, 5)];
         HashMap::from_iter(content)

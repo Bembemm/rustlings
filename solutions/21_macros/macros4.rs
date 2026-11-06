@@ -1,4 +1,4 @@
-// Added semicolons to separate the macro arms.
+// Foram adicionados pontos e vírgulas para separar os braços da macro.
 #[rustfmt::skip]
 macro_rules! my_macro {
     () => {

@@ -1,10 +1,10 @@
-// This is a program that is trying to use a completed version of the
-// `total_cost` function from the previous exercise. It's not working though!
-// Why not? What should we do to fix it?
+// Este programa tenta usar uma versão concluída da
+// função `total_cost` do exercício anterior, mas algo não funciona!
+// Por quê? O que devemos fazer para corrigir?
 
 use std::num::ParseIntError;
 
-// Don't change this function.
+// Não altere esta função.
 fn total_cost(item_quantity: &str) -> Result<i32, ParseIntError> {
     let processing_fee = 1;
     let cost_per_item = 5;
@@ -14,7 +14,7 @@ fn total_cost(item_quantity: &str) -> Result<i32, ParseIntError> {
 }
 
 fn main() -> Result<(), ParseIntError> {
-    //    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ added
+    //    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ adicionado
     let mut tokens = 100;
     let pretend_user_input = "8";
 
@@ -27,6 +27,6 @@ fn main() -> Result<(), ParseIntError> {
         println!("You now have {tokens} tokens.");
     }
 
-    // Added this line to return the `Ok` variant of the expected `Result`.
+    // Esta linha foi adicionada para retornar a variante `Ok` do `Result` esperado.
     Ok(())
 }

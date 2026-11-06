@@ -1,24 +1,24 @@
-// Tests are important to ensure that your code does what you think it should
-// do.
+// Testes são importantes para garantir que o código realmente faça o que você
+// espera.
 
 fn is_even(n: i64) -> bool {
     n % 2 == 0
 }
 
 fn main() {
-    // You can optionally experiment here.
+    // Se quiser, você pode fazer experimentos aqui.
 }
 
 #[cfg(test)]
 mod tests {
-    // When writing unit tests, it is common to import everything from the outer
-    // module (`super`) using a wildcard.
+    // Ao escrever testes unitários, é comum importar tudo do módulo externo
+    // (`super`) usando um curinga.
     use super::*;
 
     #[test]
     fn you_can_assert() {
         assert!(is_even(0));
         assert!(!is_even(-1));
-        //      ^ You can assert `false` using the negation operator `!`.
+        //      ^ Você pode verificar `false` usando o operador de negação `!`.
     }
 }

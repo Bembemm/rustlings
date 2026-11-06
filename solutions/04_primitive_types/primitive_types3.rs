@@ -1,5 +1,5 @@
 fn main() {
-    // An array with 100 elements of the value 42.
+    // Um array com 100 elementos, todos com o valor 42.
     let a = [42; 100];
 
     if a.len() >= 100 {

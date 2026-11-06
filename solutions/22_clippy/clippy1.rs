@@ -1,13 +1,13 @@
-// The Clippy tool is a collection of lints to analyze your code so you can
-// catch common mistakes and improve your Rust code.
+// Clippy é uma coleção de lints que analisa seu código para
+// encontrar erros comuns e melhorar seu código Rust.
 //
-// For these exercises, the code will fail to compile when there are Clippy
-// warnings. Check Clippy's suggestions from the output to solve the exercise.
+// Nestes exercícios, o código falhará quando houver avisos do Clippy.
+// Leia as sugestões do Clippy na saída para resolver o exercício.
 
 use std::f32::consts::PI;
 
 fn main() {
-    // Use the more accurate `PI` constant.
+    // Use a constante `PI`, que é mais precisa.
     let pi = PI;
     let radius: f32 = 5.0;
 

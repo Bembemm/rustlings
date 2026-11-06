@@ -1,16 +1,16 @@
 fn generate_nametag_text(name: String) -> Result<String, String> {
     //                                    ^^^^^^         ^^^^^^
     if name.is_empty() {
-        // `Err(String)` instead of `None`.
+        // `Err(String)` em vez de `None`.
         Err("Empty names aren't allowed".to_string())
     } else {
-        // `Ok` instead of `Some`.
+        // `Ok` em vez de `Some`.
         Ok(format!("Hi! My name is {name}"))
     }
 }
 
 fn main() {
-    // You can optionally experiment here.
+    // Se quiser, você pode fazer experimentos aqui.
 }
 
 #[cfg(test)]

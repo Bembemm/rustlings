@@ -1,7 +1,7 @@
-// This function returns how much ice cream there is left in the fridge.
-// If it's before 22:00 (24-hour system), then 5 scoops are left. At 22:00,
-// someone eats it all, so no ice cream is left (value 0). Return `None` if
-// `hour_of_day` is higher than 23.
+// Esta função informa quanto sorvete ainda resta na geladeira.
+// Antes das 22h (relógio de 24 horas), restam 5 bolas de sorvete. Às 22h,
+// alguém come tudo, e não sobra sorvete (valor 0). Retorne `None` se
+// `hour_of_day` for maior que 23.
 fn maybe_ice_cream(hour_of_day: u16) -> Option<u16> {
     match hour_of_day {
         0..=21 => Some(5),
@@ -11,7 +11,7 @@ fn maybe_ice_cream(hour_of_day: u16) -> Option<u16> {
 }
 
 fn main() {
-    // You can optionally experiment here.
+    // Se quiser, você pode fazer experimentos aqui.
 }
 
 #[cfg(test)]
@@ -20,7 +20,7 @@ mod tests {
 
     #[test]
     fn raw_value() {
-        // Using `unwrap` is fine in a test.
+        // Usar `unwrap` é aceitável em um teste.
         let ice_creams = maybe_ice_cream(12).unwrap();
 
         assert_eq!(ice_creams, 5);

@@ -1,9 +1,9 @@
-// When performing operations on elements within a collection, iterators are
-// essential. This module helps you get familiar with the structure of using an
-// iterator and how to go through elements within an iterable collection.
+// Ao realizar operações sobre elementos de uma coleção, iteradores são
+// essenciais. Este módulo ajuda você a se familiarizar com a estrutura de uso de um
+// iterador e com a forma de percorrer os elementos de uma coleção iterável.
 
 fn main() {
-    // You can optionally experiment here.
+    // Se quiser, você pode fazer experimentos aqui.
 }
 
 #[cfg(test)]
@@ -12,7 +12,7 @@ mod tests {
     fn iterators() {
         let my_fav_fruits = &["banana", "custard apple", "avocado", "peach", "raspberry"];
 
-        // Create an iterator over the slice.
+        // Crie um iterador sobre o slice.
         let mut fav_fruits_iterator = my_fav_fruits.iter();
 
         assert_eq!(fav_fruits_iterator.next(), Some(&"banana"));
@@ -21,6 +21,6 @@ mod tests {
         assert_eq!(fav_fruits_iterator.next(), Some(&"peach"));
         assert_eq!(fav_fruits_iterator.next(), Some(&"raspberry"));
         assert_eq!(fav_fruits_iterator.next(), None);
-        //                                     ^^^^ reached the end
+        //                                     ^^^^ chegou ao fim
     }
 }

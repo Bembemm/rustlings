@@ -1,13 +1,13 @@
-// At compile time, Rust needs to know how much space a type takes up. This
-// becomes problematic for recursive types, where a value can have as part of
-// itself another value of the same type. To get around the issue, we can use a
-// `Box` - a smart pointer used to store data on the heap, which also allows us
-// to wrap a recursive type.
+// Durante a compilação, Rust precisa saber quanto espaço um tipo ocupa. Isso
+// se torna um problema para tipos recursivos, nos quais um valor pode conter
+// outro valor do mesmo tipo. Para contornar isso, podemos usar
+// `Box` — um ponteiro inteligente usado para armazenar dados na heap — que também permite
+// envolver um tipo recursivo.
 //
-// The recursive type we're implementing in this exercise is the "cons list", a
-// data structure frequently found in functional programming languages. Each
-// item in a cons list contains two elements: The value of the current item and
-// the next item. The last item is a value called `Nil`.
+// O tipo recursivo implementado neste exercício é a "cons list", uma
+// estrutura de dados comum em linguagens funcionais. Cada
+// item da lista contém dois elementos: o valor atual e
+// o próximo item. O último item é representado por `Nil`.
 
 #[derive(PartialEq, Debug)]
 enum List {

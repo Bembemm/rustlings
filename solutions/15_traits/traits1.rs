@@ -1,5 +1,5 @@
-// The trait `AppendBar` has only one function which appends "Bar" to any object
-// implementing this trait.
+// A trait `AppendBar` possui apenas uma função, que adiciona "Bar" a qualquer objeto
+// que implemente essa trait.
 trait AppendBar {
     fn append_bar(self) -> Self;
 }

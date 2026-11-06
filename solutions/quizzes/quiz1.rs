@@ -1,7 +1,7 @@
-// Mary is buying apples. The price of an apple is calculated as follows:
-// - An apple costs 2 rustbucks.
-// - However, if Mary buys more than 40 apples, the price of each apple in the
-// entire order is reduced to only 1 rustbuck!
+// Mary está comprando maçãs. O preço funciona assim:
+// - Cada maçã custa 2 rustbucks.
+// - Porém, se Mary comprar mais de 40 maçãs, o preço de cada maçã em todo
+// o pedido cai para apenas 1 rustbuck!
 
 fn calculate_price_of_apples(n_apples: u64) -> u64 {
     if n_apples > 40 {
@@ -12,10 +12,10 @@ fn calculate_price_of_apples(n_apples: u64) -> u64 {
 }
 
 fn main() {
-    // You can optionally experiment here.
+    // Se quiser, você pode fazer experimentos aqui.
 }
 
-// Don't change the tests!
+// Não altere os testes!
 #[cfg(test)]
 mod tests {
     use super::*;

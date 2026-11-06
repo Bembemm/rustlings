@@ -20,7 +20,7 @@ impl Fireworks {
 }
 
 fn main() {
-    // You can optionally experiment here.
+    // Se quiser, você pode fazer experimentos aqui.
 }
 
 #[cfg(test)]
@@ -38,8 +38,8 @@ mod tests {
 
         let mut f = Fireworks::new();
         f.add_rockets(7);
-        // We don't use method syntax in the last test to ensure the `start`
-        // function takes ownership of the fireworks.
+        // No último teste, não usamos a sintaxe de método para garantir que `start`
+        // assuma a propriedade do valor de fogos de artifício.
         assert_eq!(Fireworks::start(f), "🚀🚀🚀🚀🚀🚀🚀");
     }
 }

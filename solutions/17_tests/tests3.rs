@@ -4,11 +4,11 @@ struct Rectangle {
 }
 
 impl Rectangle {
-    // Don't change this function.
+    // Não altere esta função.
     fn new(width: i32, height: i32) -> Self {
         if width <= 0 || height <= 0 {
-            // Returning a `Result` would be better here. But we want to learn
-            // how to test functions that can panic.
+            // Retornar um `Result` seria melhor aqui, mas queremos aprender
+            // como testar funções que podem causar `panic`.
             panic!("Rectangle width and height must be positive");
         }
 
@@ -17,7 +17,7 @@ impl Rectangle {
 }
 
 fn main() {
-    // You can optionally experiment here.
+    // Se quiser, você pode fazer experimentos aqui.
 }
 
 #[cfg(test)]

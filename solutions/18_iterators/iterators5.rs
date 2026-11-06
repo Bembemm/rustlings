@@ -1,8 +1,8 @@
-// Let's define a simple model to track Rustlings' exercise progress. Progress
-// will be modelled using a hash map. The name of the exercise is the key and
-// the progress is the value. Two counting functions were created to count the
-// number of exercises with a given progress. Recreate this counting
-// functionality using iterators. Try to not use imperative loops (for/while).
+// Vamos definir um modelo simples para acompanhar o progresso dos exercícios do Rustlings. O progresso
+// será representado por um hash map. O nome do exercício é a chave e
+// o progresso é o valor. Duas funções de contagem foram criadas para contar
+// quantos exercícios possuem determinado progresso. Recrie essa
+// funcionalidade usando iteradores. Tente não usar laços imperativos (`for`/`while`).
 
 use std::collections::HashMap;
 
@@ -24,7 +24,7 @@ fn count_for(map: &HashMap<String, Progress>, value: Progress) -> usize {
 }
 
 fn count_iterator(map: &HashMap<String, Progress>, value: Progress) -> usize {
-    // `map` is a hash map with `String` keys and `Progress` values.
+    // `map` é um hash map com chaves `String` e valores `Progress`.
     // map = { "variables1": Complete, "conversions3": None, … }
     map.values().filter(|val| **val == value).count()
 }
@@ -38,7 +38,7 @@ fn count_collection_for(collection: &[HashMap<String, Progress>], value: Progres
 }
 
 fn count_collection_iterator(collection: &[HashMap<String, Progress>], value: Progress) -> usize {
-    // `collection` is a slice of hash maps.
+    // `collection` é um slice de hash maps.
     // collection = [{ "variables1": Complete, "conversions3": None, … },
     //               { "variables2": Complete, … }, … ]
     collection
@@ -47,9 +47,9 @@ fn count_collection_iterator(collection: &[HashMap<String, Progress>], value: Pr
         .sum()
 }
 
-// Equivalent to `count_collection_iterator` and `count_iterator`, iterating as
-// if the collection was a single container instead of a container of containers
-// (and more accurately, a single iterator instead of an iterator of iterators).
+// Equivalente a `count_collection_iterator` e `count_iterator`, iterando como
+// se a coleção fosse um único contêiner em vez de um contêiner de contêineres
+// (ou, mais precisamente, um único iterador em vez de um iterador de iteradores).
 fn count_collection_iterator_flat(
     collection: &[HashMap<String, Progress>],
     value: Progress,
@@ -65,7 +65,7 @@ fn count_collection_iterator_flat(
 }
 
 fn main() {
-    // You can optionally experiment here.
+    // Se quiser, você pode fazer experimentos aqui.
 }
 
 #[cfg(test)]

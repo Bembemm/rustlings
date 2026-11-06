@@ -1,11 +1,11 @@
-// Calculates the power of 2 using a bit shift.
-// `1 << n` is equivalent to "2 to the power of n".
+// Calcula uma potência de 2 usando deslocamento de bits.
+// `1 << n` equivale a "2 elevado a n".
 fn power_of_2(n: u8) -> u64 {
     1 << n
 }
 
 fn main() {
-    // You can optionally experiment here.
+    // Se quiser, você pode fazer experimentos aqui.
 }
 
 #[cfg(test)]

@@ -1,15 +1,15 @@
-// This exercise is an altered version of the `errors4` exercise. It uses some
-// concepts that we won't get to until later in the course, like `Box` and the
-// `From` trait. It's not important to understand them in detail right now, but
-// you can read ahead if you like. For now, think of the `Box<dyn ???>` type as
-// an "I want anything that does ???" type.
+// Este exercício é uma versão modificada de `errors4`. Ele usa alguns
+// conceitos que só veremos mais adiante, como `Box` e a
+// trait `From`. Não é necessário entendê-los em detalhes agora, mas
+// você pode adiantar a leitura se quiser. Por enquanto, pense em `Box<dyn ???>` como
+// um tipo "quero qualquer coisa que faça ???".
 //
-// In short, this particular use case for boxes is for when you want to own a
-// value and you care only that it is a type which implements a particular
-// trait. To do so, the `Box` is declared as of type `Box<dyn Trait>` where
-// `Trait` is the trait the compiler looks for on any value used in that
-// context. For this exercise, that context is the potential errors which
-// can be returned in a `Result`.
+// Resumindo, este uso de `Box` serve quando você quer possuir um
+// valor e só importa que o tipo implemente uma determinada
+// trait. Para isso, declaramos `Box<dyn Trait>`, em que
+// `Trait` é a trait que o compilador exige dos valores usados nesse
+// contexto. Neste exercício, esse contexto são os possíveis erros que
+// podem ser retornados em um `Result`.
 
 use std::error::Error;
 use std::fmt;
@@ -20,7 +20,7 @@ enum CreationError {
     Zero,
 }
 
-// This is required so that `CreationError` can implement `Error`.
+// Isto é necessário para que `CreationError` possa implementar `Error`.
 impl fmt::Display for CreationError {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         let description = match *self {

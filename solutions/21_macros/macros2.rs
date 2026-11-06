@@ -1,4 +1,4 @@
-// Moved the macro definition to be before its call.
+// A definição da macro foi movida para antes da chamada.
 macro_rules! my_macro {
     () => {
         println!("Check out my macro!");

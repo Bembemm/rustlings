@@ -1,9 +1,9 @@
-// In this exercise, we'll implement `FromStr` to convert data stored as a
-// string into a structured type. Unlike the `From` trait, the conversion
-// expressed by `FromStr` can fail, so it returns a `Result`. Additionally,
-// upon implementing `FromStr`, you can use the `parse` method on strings to
-// generate an object of the implementor type. You can read more about it in
-// the documentation:
+// Neste exercício, implementaremos `FromStr` para converter dados armazenados em uma
+// string para um tipo estruturado. Diferentemente da trait `From`, a conversão
+// expressa por `FromStr` pode falhar, então ela retorna um `Result`. Além disso,
+// depois de implementar `FromStr`, você pode usar o método `parse` em strings para
+// criar um valor do tipo implementador. Leia mais na
+// documentação:
 // https://doc.rust-lang.org/std/str/trait.FromStr.html
 
 use std::num::ParseIntError;
@@ -15,14 +15,14 @@ struct Person {
     age: u8,
 }
 
-// We will use this error type for the `FromStr` implementation.
+// Usaremos este tipo de erro na implementação de `FromStr`.
 #[derive(Debug, PartialEq)]
 enum ParsePersonError {
-    // Incorrect number of fields
+    // Número incorreto de campos
     BadLen,
-    // Empty name field
+    // Campo de nome vazio
     NoName,
-    // Wrapped error from parse::<u8>()
+    // Erro encapsulado vindo de `parse::<u8>()`
     ParseInt(ParseIntError),
 }
 
@@ -32,7 +32,7 @@ impl FromStr for Person {
     fn from_str(s: &str) -> Result<Self, Self::Err> {
         let mut split = s.split(',');
         let (Some(name), Some(age), None) = (split.next(), split.next(), split.next()) else {
-            //                      ^^^^ there should be no third element
+            //                      ^^^^ não deve existir um terceiro elemento
             return Err(ParsePersonError::BadLen);
         };
 

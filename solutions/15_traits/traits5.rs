@@ -24,7 +24,7 @@ fn some_func(item: impl SomeTrait + OtherTrait) -> bool {
 }
 
 fn main() {
-    // You can optionally experiment here.
+    // Se quiser, você pode fazer experimentos aqui.
 }
 
 #[cfg(test)]

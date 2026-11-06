@@ -1,15 +1,15 @@
-// An imaginary magical school has a new report card generation system written
-// in Rust! Currently, the system only supports creating report cards where the
-// student's grade is represented numerically (e.g. 1.0 -> 5.5). However, the
-// school also issues alphabetical grades (A+ -> F-) and needs to be able to
-// print both types of report card!
+// Uma escola de magia imaginária possui um novo sistema de boletins escrito
+// em Rust! Atualmente, o sistema só cria boletins em que
+// a nota do aluno é numérica (por exemplo, 1.0 -> 5.5). Porém, a
+// escola também usa notas por letras (A+ -> F-) e precisa
+// exibir os dois tipos de boletim!
 //
-// Make the necessary code changes in the struct `ReportCard` and the impl
-// block to support alphabetical report cards in addition to numerical ones.
+// Faça as alterações necessárias na struct `ReportCard` e no bloco `impl`
+// para aceitar notas por letras além das numéricas.
 
 use std::fmt::Display;
 
-// Make the struct generic over `T`.
+// Torne a struct genérica sobre `T`.
 struct ReportCard<T> {
     //           ^^^
     grade: T,
@@ -18,9 +18,9 @@ struct ReportCard<T> {
     student_age: u8,
 }
 
-// To be able to print the grade, it has to implement the `Display` trait.
+// Para poder exibir a nota, o tipo precisa implementar a trait `Display`.
 impl<T: Display> ReportCard<T> {
-    //  ^^^^^^^ require that `T` implements `Display`.
+    //  ^^^^^^^ exige que `T` implemente `Display`.
     fn print(&self) -> String {
         format!(
             "{} ({}) - achieved a grade of {}",
@@ -30,7 +30,7 @@ impl<T: Display> ReportCard<T> {
 }
 
 fn main() {
-    // You can optionally experiment here.
+    // Se quiser, você pode fazer experimentos aqui.
 }
 
 #[cfg(test)]

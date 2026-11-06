@@ -1,7 +1,7 @@
-// The Rust compiler needs to know how to check whether supplied references are
-// valid, so that it can let the programmer know if a reference is at risk of
-// going out of scope before it is used. Remember, references are borrows and do
-// not own their own data. What if their owner goes out of scope?
+// O compilador Rust precisa saber como verificar se as referências recebidas são
+// válidas, para poder avisar quando uma referência corre o risco de
+// sair de escopo antes de ser usada. Lembre-se: referências são empréstimos e
+// não possuem os próprios dados. O que acontece se o dono sair de escopo?
 
 fn longest<'a>(x: &'a str, y: &'a str) -> &'a str {
     //    ^^^^     ^^          ^^          ^^
@@ -9,7 +9,7 @@ fn longest<'a>(x: &'a str, y: &'a str) -> &'a str {
 }
 
 fn main() {
-    // You can optionally experiment here.
+    // Se quiser, você pode fazer experimentos aqui.
 }
 
 #[cfg(test)]

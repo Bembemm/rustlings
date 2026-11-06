@@ -1,26 +1,26 @@
-// AsRef and AsMut allow for cheap reference-to-reference conversions. Read more
-// about them at https://doc.rust-lang.org/std/convert/trait.AsRef.html and
-// https://doc.rust-lang.org/std/convert/trait.AsMut.html, respectively.
+// `AsRef` e `AsMut` permitem conversões baratas entre referências. Leia mais
+// em https://doc.rust-lang.org/std/convert/trait.AsRef.html e
+// https://doc.rust-lang.org/std/convert/trait.AsMut.html, respectivamente.
 
-// Obtain the number of bytes (not characters) in the given argument
-// (`.len()` returns the number of bytes in a string).
+// Obtenha o número de bytes (não de caracteres) do argumento
+// (`.len()` retorna o número de bytes de uma string).
 fn byte_counter<T: AsRef<str>>(arg: T) -> usize {
     arg.as_ref().len()
 }
 
-// Obtain the number of characters (not bytes) in the given argument.
+// Obtenha o número de caracteres (não de bytes) do argumento.
 fn char_counter<T: AsRef<str>>(arg: T) -> usize {
     arg.as_ref().chars().count()
 }
 
-// Squares a number using `as_mut()`.
+// Eleva um número ao quadrado usando `as_mut()`.
 fn num_sq<T: AsMut<u32>>(arg: &mut T) {
     let arg = arg.as_mut();
     *arg *= *arg;
 }
 
 fn main() {
-    // You can optionally experiment here.
+    // Se quiser, você pode fazer experimentos aqui.
 }
 
 #[cfg(test)]

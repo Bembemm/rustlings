@@ -9,7 +9,7 @@ fn vec_loop(input: &[i32]) -> Vec<i32> {
 }
 
 fn main() {
-    // You can optionally experiment here.
+    // Se quiser, você pode fazer experimentos aqui.
 }
 
 #[cfg(test)]

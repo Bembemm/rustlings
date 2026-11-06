@@ -1,18 +1,18 @@
-// Say we're writing a game where you can buy items with tokens. All items cost
-// 5 tokens, and whenever you purchase items there is a processing fee of 1
-// token. A player of the game will type in how many items they want to buy, and
-// the `total_cost` function will calculate the total cost of the items. Since
-// the player typed in the quantity, we get it as a string. They might have
-// typed anything, not just numbers!
+// Imagine um jogo em que você compra itens com fichas. Todos os itens custam
+// 5 fichas, e cada compra cobra uma taxa de processamento de 1
+// ficha. O jogador informa quantos itens deseja comprar, e
+// a função `total_cost` calcula o custo total. Como
+// a quantidade digitada chega como string, ela pode conter
+// qualquer coisa, não apenas números!
 //
-// Right now, this function isn't handling the error case at all. What we want
-// to do is: If we call the `total_cost` function on a string that is not a
-// number, that function will return a `ParseIntError`. In that case, we want to
-// immediately return that error from our function and not try to multiply and
-// add.
+// No momento, esta função não trata o caso de erro. Queremos
+// que, se `total_cost` receber uma string que não seja um
+// número, a função retorne um `ParseIntError`. Nesse caso, queremos
+// retornar o erro imediatamente, sem tentar multiplicar nem
+// somar.
 //
-// There are at least two ways to implement this that are both correct. But one
-// is a lot shorter!
+// Há pelo menos duas formas corretas de implementar isso, mas uma
+// é bem mais curta!
 
 use std::num::ParseIntError;
 
@@ -21,11 +21,11 @@ fn total_cost(item_quantity: &str) -> Result<i32, ParseIntError> {
     let processing_fee = 1;
     let cost_per_item = 5;
 
-    // Added `?` to propagate the error.
+    // Foi adicionado `?` para propagar o erro.
     let qty = item_quantity.parse::<i32>()?;
-    //                                    ^ added
+    //                                    ^ adicionado
 
-    // Equivalent to this verbose version:
+    // Equivalente a esta versão mais explícita:
     let qty = match item_quantity.parse::<i32>() {
         Ok(v) => v,
         Err(e) => return Err(e),
@@ -35,7 +35,7 @@ fn total_cost(item_quantity: &str) -> Result<i32, ParseIntError> {
 }
 
 fn main() {
-    // You can optionally experiment here.
+    // Se quiser, você pode fazer experimentos aqui.
 }
 
 #[cfg(test)]

@@ -1,10 +1,10 @@
-// The `From` trait is used for value-to-value conversions. If `From` is
-// implemented, an implementation of `Into` is automatically provided.
-// You can read more about it in the documentation:
+// A trait `From` é usada para conversões entre valores. Se `From` for
+// implementada, uma implementação de `Into` é fornecida automaticamente.
+// Leia mais na documentação:
 // https://doc.rust-lang.org/std/convert/trait.From.html
 //
-// Representing units of measurements with separate types is a common practice.
-// It avoids accidentally mixing up values of different units of measurement.
+// Representar unidades de medida com tipos separados é uma prática comum.
+// Isso evita misturar acidentalmente valores de unidades diferentes.
 
 struct Celsius(f64);
 
@@ -23,7 +23,7 @@ impl From<Fahrenheit> for Celsius {
 }
 
 fn main() {
-    // You can optionally experiment here.
+    // Se quiser, você pode fazer experimentos aqui.
 }
 
 #[cfg(test)]

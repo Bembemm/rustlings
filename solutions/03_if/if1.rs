@@ -3,10 +3,10 @@ fn bigger(a: i32, b: i32) -> i32 {
 }
 
 fn main() {
-    // You can optionally experiment here.
+    // Se quiser, você pode fazer experimentos aqui.
 }
 
-// Don't mind this for now :)
+// Não se preocupe com esta parte por enquanto :)
 #[cfg(test)]
 mod tests {
     use super::*;

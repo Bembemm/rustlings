@@ -1,5 +1,5 @@
 fn current_favorite_color() -> String {
-    // Equivalent to `String::from("blue")`
+    // Equivalente a `String::from("blue")`
     "blue".to_string()
 }
 

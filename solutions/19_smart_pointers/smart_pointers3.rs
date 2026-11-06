@@ -1,21 +1,21 @@
-// In this exercise, we are given a `Vec` of `u32` called `numbers` with values
-// ranging from 0 to 99. We would like to use this set of numbers within 8
-// different threads simultaneously. Each thread is going to get the sum of
-// every eighth value with an offset.
+// Neste exercício, recebemos um `Vec<u32>` chamado `numbers`, com valores
+// de 0 a 99. Queremos usar esses números em 8
+// threads diferentes ao mesmo tempo. Cada thread calculará a soma de
+// cada oitavo valor, usando um deslocamento.
 //
-// The first thread (offset 0), will sum 0, 8, 16, …
-// The second thread (offset 1), will sum 1, 9, 17, …
-// The third thread (offset 2), will sum 2, 10, 18, …
+// A primeira thread (offset 0) soma 0, 8, 16, …
+// A segunda thread (offset 1) soma 1, 9, 17, …
+// A terceira thread (offset 2) soma 2, 10, 18, …
 // …
-// The eighth thread (offset 7), will sum 7, 15, 23, …
+// A oitava thread (offset 7) soma 7, 15, 23, …
 //
-// Each thread should own a reference-counting pointer to the vector of
-// numbers. But `Rc` isn't thread-safe. Therefore, we need to use `Arc`.
+// Cada thread deve possuir um ponteiro com contagem de referências para o vetor de
+// números. Como `Rc` não é seguro entre threads, precisamos usar `Arc`.
 //
-// Don't get distracted by how threads are spawned and joined. We will practice
-// that later in the exercises about threads.
+// Não se preocupe ainda com a forma como as threads são criadas e aguardadas. Vamos praticar
+// isso mais adiante nos exercícios sobre threads.
 
-// Don't change the lines below.
+// Não altere as linhas abaixo.
 #![forbid(unused_imports)]
 use std::{sync::Arc, thread};
 

@@ -1,8 +1,8 @@
-// Using catch-all error types like `Box<dyn Error>` isn't recommended for
-// library code where callers might want to make decisions based on the error
-// content instead of printing it out or propagating it further. Here, we define
-// a custom error type to make it possible for callers to decide what to do next
-// when our function returns an error.
+// Usar tipos genéricos de erro como `Box<dyn Error>` não é recomendado em
+// código de biblioteca quando quem chama a função pode querer tomar decisões com base no
+// conteúdo do erro, em vez de apenas imprimi-lo ou propagá-lo. Aqui, definimos
+// um tipo de erro próprio para permitir que o chamador decida o que fazer
+// quando a função retornar um erro.
 
 use std::num::ParseIntError;
 
@@ -12,22 +12,22 @@ enum CreationError {
     Zero,
 }
 
-// A custom error type that we will be using in `PositiveNonzeroInteger::parse`.
+// Tipo de erro personalizado usado em `PositiveNonzeroInteger::parse`.
 #[derive(PartialEq, Debug)]
 enum ParsePosNonzeroError {
     Creation(CreationError),
     ParseInt(ParseIntError),
 }
 
-// As an alternative solution, implementing the `From` trait allows for the
-// automatic conversion from a `ParseIntError` into a `ParsePosNonzeroError`
-// using the `?` operator, without the need to call `map_err`.
+// Como solução alternativa, implementar a trait `From` permite
+// converter automaticamente um `ParseIntError` em `ParsePosNonzeroError`
+// usando o operador `?`, sem precisar chamar `map_err`.
 //
 // ```
 // let x: i64 = s.parse()?;
 // ```
 //
-// Traits like `From` will be dealt with in later exercises.
+// Traits como `From` serão estudadas em exercícios posteriores.
 impl From<ParseIntError> for ParsePosNonzeroError {
     fn from(err: ParseIntError) -> Self {
         ParsePosNonzeroError::ParseInt(err)
@@ -47,8 +47,8 @@ impl PositiveNonzeroInteger {
     }
 
     fn parse(s: &str) -> Result<Self, ParsePosNonzeroError> {
-        // Return an appropriate error instead of panicking when `parse()`
-        // returns an error.
+        // Retorne um erro apropriado em vez de causar `panic` quando `parse()`
+        // retornar um erro.
         let x: i64 = s.parse().map_err(ParsePosNonzeroError::ParseInt)?;
         //                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
         Self::new(x).map_err(ParsePosNonzeroError::Creation)
@@ -56,7 +56,7 @@ impl PositiveNonzeroInteger {
 }
 
 fn main() {
-    // You can optionally experiment here.
+    // Se quiser, você pode fazer experimentos aqui.
 }
 
 #[cfg(test)]

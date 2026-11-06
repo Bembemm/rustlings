@@ -6,8 +6,8 @@ fn main() {
     let word = String::from("green");
 
     if is_a_color_word(&word) {
-        //             ^ added to have `&String` which is automatically
-        //               coerced to `&str` by the compiler.
+        //             ^ adicionado para obter `&String`, que é automaticamente
+        //               convertido por coerção para `&str` pelo compilador.
         println!("That is a color word I know!");
     } else {
         println!("That is not a color word I know.");

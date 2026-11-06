@@ -2,17 +2,17 @@ fn animal_habitat(animal: &str) -> &str {
     let identifier = if animal == "crab" {
         1
     } else if animal == "gopher" {
-        // Integer, so that every branch has the same type.
+        // Inteiro, para que todos os ramos tenham o mesmo tipo.
         2
     } else if animal == "snake" {
         3
     } else {
-        // Any unused identifier.
+        // Qualquer identificador não utilizado.
         4
     };
 
-    // Instead of such an identifier, you would use an enum in Rust.
-    // But we didn't get into enums yet.
+    // Em Rust, em vez de um identificador assim, normalmente usaríamos uma enumeração.
+    // Mas ainda não chegamos às enumerações.
     if identifier == 1 {
         "Beach"
     } else if identifier == 2 {
@@ -25,7 +25,7 @@ fn animal_habitat(animal: &str) -> &str {
 }
 
 fn main() {
-    // You can optionally experiment here.
+    // Se quiser, você pode fazer experimentos aqui.
 }
 
 #[cfg(test)]

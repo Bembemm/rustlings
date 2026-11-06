@@ -1,7 +1,7 @@
-// `TryFrom` is a simple and safe type conversion that may fail in a controlled
-// way under some circumstances. Basically, this is the same as `From`. The main
-// difference is that this should return a `Result` type instead of the target
-// type itself. You can read more about it in the documentation:
+// `TryFrom` é uma conversão de tipos simples e segura que pode falhar de maneira controlada
+// em algumas situações. Em essência, ela é parecida com `From`. A principal
+// diferença é que deve retornar um `Result` em vez do tipo de destino
+// diretamente. Leia mais na documentação:
 // https://doc.rust-lang.org/std/convert/trait.TryFrom.html
 
 #![allow(clippy::useless_vec)]
@@ -14,12 +14,12 @@ struct Color {
     blue: u8,
 }
 
-// We will use this error type for the `TryFrom` conversions.
+// Usaremos este tipo de erro nas conversões com `TryFrom`.
 #[derive(Debug, PartialEq)]
 enum IntoColorError {
-    // Incorrect length of slice
+    // Tamanho incorreto do slice
     BadLen,
-    // Integer conversion error
+    // Erro de conversão de inteiro
     IntConversion,
 }
 
@@ -43,7 +43,7 @@ impl TryFrom<[i16; 3]> for Color {
     type Error = IntoColorError;
 
     fn try_from(arr: [i16; 3]) -> Result<Self, Self::Error> {
-        // Reuse the implementation for a tuple.
+        // Reutilize a implementação da tupla.
         Self::try_from((arr[0], arr[1], arr[2]))
     }
 }
@@ -62,19 +62,19 @@ impl TryFrom<&[i16]> for Color {
 }
 
 fn main() {
-    // Using the `try_from` function.
+    // Usando a função `try_from`.
     let c1 = Color::try_from((183, 65, 14));
     println!("{c1:?}");
 
-    // Since `TryFrom` is implemented for `Color`, we can use `TryInto`.
+    // Como `TryFrom` foi implementada para `Color`, podemos usar `TryInto`.
     let c2: Result<Color, _> = [183, 65, 14].try_into();
     println!("{c2:?}");
 
     let v = vec![183, 65, 14];
-    // With slice we should use the `try_from` function
+    // Com slices, podemos usar a função `try_from`
     let c3 = Color::try_from(&v[..]);
     println!("{c3:?}");
-    // or put the slice within round brackets and use `try_into`.
+    // ou colocar o slice entre parênteses e usar `try_into`.
     let c4: Result<Color, _> = (&v[..]).try_into();
     println!("{c4:?}");
 }
