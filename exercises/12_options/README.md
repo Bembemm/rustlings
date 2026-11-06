@@ -1,21 +1,22 @@
-# Options
+# Valores opcionais (`Option`)
 
-Type Option represents an optional value: every Option is either Some and contains a value, or None, and does not.
-Option types are very common in Rust code, as they have a number of uses:
+O tipo `Option` representa um valor que **pode existir ou não**. Todo `Option` é uma destas duas variantes: `Some(valor)`, quando há um valor, ou `None`, quando não há.
 
-- Initial values
-- Return values for functions that are not defined over their entire input range (partial functions)
-- Return value for otherwise reporting simple errors, where None is returned on error
-- Optional struct fields
-- Struct fields that can be loaned or "taken"
-- Optional function arguments
-- Nullable pointers
-- Swapping things out of difficult situations
+Esse tipo aparece com frequência no Rust e pode ser utilizado para:
 
-## Further Information
+- Representar valores inicialmente ausentes;
+- Retornar resultados de funções que nem sempre produzem um valor;
+- Indicar a ausência de um resultado sem precisar lançar um erro;
+- Definir campos opcionais em estruturas;
+- Emprestar ou retirar valores de campos de estruturas;
+- Criar argumentos opcionais;
+- Representar ponteiros que podem ser nulos;
+- Substituir temporariamente valores em operações mais complexas.
 
-- [Option Enum Format](https://doc.rust-lang.org/book/ch10-01-syntax.html#in-enum-definitions)
-- [Option Module Documentation](https://doc.rust-lang.org/std/option/)
-- [Option Enum Documentation](https://doc.rust-lang.org/std/option/enum.Option.html)
-- [if let](https://doc.rust-lang.org/rust-by-example/flow_control/if_let.html)
-- [while let](https://doc.rust-lang.org/rust-by-example/flow_control/while_let.html)
+## Para saber mais
+
+- [Definições de enumerações com `Option`](https://doc.rust-lang.org/book/ch10-01-syntax.html#in-enum-definitions)
+- [Documentação do módulo `Option`](https://doc.rust-lang.org/std/option/)
+- [Documentação da enumeração `Option`](https://doc.rust-lang.org/std/option/enum.Option.html)
+- [`if let`](https://doc.rust-lang.org/rust-by-example/flow_control/if_let.html)
+- [`while let`](https://doc.rust-lang.org/rust-by-example/flow_control/while_let.html)

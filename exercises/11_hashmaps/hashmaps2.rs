@@ -1,12 +1,10 @@
-// We're collecting different fruits to bake a delicious fruit cake. For this,
-// we have a basket, which we'll represent in the form of a hash map. The key
-// represents the name of each fruit we collect and the value represents how
-// many of that particular fruit we have collected. Three types of fruits -
-// Apple (4), Mango (2) and Lychee (5) are already in the basket hash map. You
-// must add fruit to the basket so that there is at least one of each kind and
-// more than 11 in total - we have a lot of mouths to feed. You are not allowed
-// to insert any more of the fruits that are already in the basket (Apple,
-// Mango, and Lychee).
+// Estamos juntando frutas para fazer um bolo delicioso. A cesta será um
+// hash map: a chave representa o tipo de fruta e o valor indica quantas
+// unidades foram coletadas. Já temos maçãs (4), mangas (2) e lichias (5).
+// Adicione frutas para que haja pelo menos uma unidade de cada tipo e
+// mais de 11 frutas ao todo — há muita gente para alimentar!
+// Você não pode aumentar as quantidades das frutas que já estão na cesta
+// (maçã, manga e lichia).
 
 use std::collections::HashMap;
 
@@ -29,21 +27,20 @@ fn fruit_basket(basket: &mut HashMap<Fruit, u32>) {
     ];
 
     for fruit in fruit_kinds {
-        // TODO: Insert new fruits if they are not already present in the
-        // basket. Note that you are not allowed to put any type of fruit that's
-        // already present!
+        // TODO: Insira as frutas que ainda não estiverem na cesta.
+        // Atenção: você não pode adicionar mais unidades de tipos já presentes!
     }
 }
 
 fn main() {
-    // You can optionally experiment here.
+    // Se quiser, você pode fazer experimentos aqui.
 }
 
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    // Don't modify this function!
+    // Não altere esta função!
     fn get_fruit_basket() -> HashMap<Fruit, u32> {
         let content = [(Fruit::Apple, 4), (Fruit::Mango, 2), (Fruit::Lychee, 5)];
         HashMap::from_iter(content)
@@ -89,7 +86,7 @@ mod tests {
 
         for fruit_kind in fruit_kinds {
             let Some(amount) = basket.get(&fruit_kind) else {
-                panic!("Fruit kind {fruit_kind:?} was not found in basket");
+                panic!("A fruta do tipo {fruit_kind:?} não foi encontrada na cesta");
             };
             assert!(*amount > 0);
         }

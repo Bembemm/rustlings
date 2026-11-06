@@ -16,7 +16,7 @@ struct State {
     height: u64,
     position: Point,
     message: String,
-    // RGB color composed of red, green and blue.
+    // Cor RGB composta por vermelho, verde e azul.
     color: (u8, u8, u8),
     quit: bool,
 }
@@ -44,13 +44,13 @@ impl State {
     }
 
     fn process(&mut self, message: Message) {
-        // TODO: Create a match expression to process the different message
-        // variants using the methods defined above.
+        // TODO: Crie uma expressão `match` para processar as diferentes variantes
+        // de mensagem usando os métodos definidos acima.
     }
 }
 
 fn main() {
-    // You can optionally experiment here.
+    // Se quiser, você pode fazer experimentos aqui.
 }
 
 #[cfg(test)]

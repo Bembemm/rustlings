@@ -1,14 +1,13 @@
-// A list of scores (one per line) of a soccer match is given. Each line is of
-// the form "<team_1_name>,<team_2_name>,<team_1_goals>,<team_2_goals>"
-// Example: "England,France,4,2" (England scored 4 goals, France 2).
+// Você recebeu uma lista de placares de futebol, um por linha, no formato
+// "<time_1>,<time_2>,<gols_time_1>,<gols_time_2>".
+// Exemplo: "England,France,4,2" (a Inglaterra marcou 4 gols e a França, 2).
 //
-// You have to build a table of scores containing the name of the team, the total
-// number of goals the team scored, and the total number of goals the team
-// conceded.
+// Monte uma tabela que guarde o nome de cada equipe, o total de gols
+// marcados e o total de gols sofridos por ela.
 
 use std::collections::HashMap;
 
-// A structure to store the goal details of a team.
+// Estrutura para armazenar as estatísticas de gols de um time.
 #[derive(Default)]
 struct TeamScores {
     goals_scored: u8,
@@ -16,28 +15,27 @@ struct TeamScores {
 }
 
 fn build_score_table(results: &str) -> HashMap<&str, TeamScores> {
-    // The name of the team is the key and its associated struct is the value.
+    // O nome do time é a chave; a estrutura associada é o valor.
     let mut scores = HashMap::<&str, TeamScores>::new();
 
     for line in results.lines() {
         let mut split_iterator = line.split(',');
-        // NOTE: We use `unwrap` because we haven't dealt with error handling yet.
+        // OBSERVAÇÃO: Usamos `unwrap` porque ainda não estudamos tratamento de erros.
         let team_1_name = split_iterator.next().unwrap();
         let team_2_name = split_iterator.next().unwrap();
         let team_1_score: u8 = split_iterator.next().unwrap().parse().unwrap();
         let team_2_score: u8 = split_iterator.next().unwrap().parse().unwrap();
 
-        // TODO: Populate the score table with the extracted details.
-        // Keep in mind that goals scored by team 1 will be the number of goals
-        // conceded by team 2. Similarly, goals scored by team 2 will be the
-        // number of goals conceded by team 1.
+        // TODO: Preencha a tabela de placares com os dados extraídos.
+        // Lembre-se de que os gols marcados pelo time 1 foram sofridos pelo
+        // time 2. Da mesma forma, os gols do time 2 foram sofridos pelo time 1.
     }
 
     scores
 }
 
 fn main() {
-    // You can optionally experiment here.
+    // Se quiser, você pode fazer experimentos aqui.
 }
 
 #[cfg(test)]

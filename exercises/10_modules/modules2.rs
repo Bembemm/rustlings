@@ -1,8 +1,8 @@
-// You can bring module paths into scopes and provide new names for them with
-// the `use` and `as` keywords.
+// Você pode importar caminhos de módulos para o escopo e atribuir novos nomes
+// a eles usando as palavras-chave `use` e `as`.
 
 mod delicious_snacks {
-    // TODO: Add the following two `use` statements after fixing them.
+    // TODO: Corrija e adicione as duas instruções `use` a seguir.
     // use self::fruits::PEAR as ???;
     // use self::veggies::CUCUMBER as ???;
 
@@ -19,7 +19,7 @@ mod delicious_snacks {
 
 fn main() {
     println!(
-        "favorite snacks: {} and {}",
+        "petiscos favoritos: {} e {}",
         delicious_snacks::FRUIT,
         delicious_snacks::VEGGIE,
     );

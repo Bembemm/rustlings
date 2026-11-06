@@ -1,11 +1,11 @@
 # Strings
 
-Rust has two string types: a string slice (`&str`) and an owned string (`String`).
-We're not going to dictate when you should use which one, but we'll show you how
-to identify and create them, as well as use them.
+Rust possui dois tipos principais para trabalhar com texto: fatias de string (`&str`) e strings que possuem seus próprios dados (`String`).
 
-## Further information
+Neste módulo, vamos aprender a identificar, criar e utilizar os dois tipos. A escolha de qual usar depende do contexto e ficará mais clara com a prática.
 
-- [Strings (Rust Book)](https://doc.rust-lang.org/book/ch08-02-strings.html)
-- [`str` methods](https://doc.rust-lang.org/std/primitive.str.html)
-- [`String` methods](https://doc.rust-lang.org/std/string/struct.String.html)
+## Para saber mais
+
+- [Strings no Rust Book](https://doc.rust-lang.org/book/ch08-02-strings.html)
+- [Métodos de `str`](https://doc.rust-lang.org/std/primitive.str.html)
+- [Métodos de `String`](https://doc.rust-lang.org/std/string/struct.String.html)

@@ -1,10 +1,12 @@
-# Enums
+# Enumerações (`enums`)
 
-Rust allows you to define types called "enums" which enumerate possible values.
-Enums are a feature in many languages, but their capabilities differ in each language. Rust's enums are most similar to algebraic data types in functional languages, such as F#, OCaml, and Haskell.
-Useful in combination with enums is Rust's "pattern matching" facility, which makes it easy to run different code for different values of an enumeration.
+Rust permite definir tipos chamados `enums`, que representam um conjunto de possibilidades. Muitas linguagens possuem enumerações, mas suas capacidades variam.
 
-## Further information
+As enumerações de Rust são especialmente próximas dos *tipos algébricos de dados* usados em linguagens funcionais, como F#, OCaml e Haskell.
 
-- [Enums](https://doc.rust-lang.org/book/ch06-00-enums.html)
-- [Pattern syntax](https://doc.rust-lang.org/book/ch19-03-pattern-syntax.html)
+Um recurso muito útil junto com `enums` é a correspondência de padrões (*pattern matching*), que permite executar códigos diferentes de acordo com a variante encontrada.
+
+## Para saber mais
+
+- [Enumerações](https://doc.rust-lang.org/book/ch06-00-enums.html)
+- [Sintaxe de padrões](https://doc.rust-lang.org/book/ch19-03-pattern-syntax.html)

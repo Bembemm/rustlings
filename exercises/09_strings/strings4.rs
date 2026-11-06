@@ -1,4 +1,4 @@
-// Calls of this function should be replaced with calls of `string_slice` or `string`.
+// Substitua as chamadas desta função por chamadas a `string_slice` ou `string`.
 fn placeholder() {}
 
 fn string_slice(arg: &str) {
@@ -9,9 +9,9 @@ fn string(arg: String) {
     println!("{arg}");
 }
 
-// TODO: Here are a bunch of values - some are `String`, some are `&str`.
-// Your task is to replace `placeholder(…)` with either `string_slice(…)`
-// or `string(…)` depending on what you think each value is.
+// TODO: Abaixo há vários valores: alguns são `String` e outros são `&str`.
+// Substitua cada chamada a `placeholder(…)` por `string_slice(…)`
+// ou `string(…)`, de acordo com o tipo de cada valor.
 fn main() {
     placeholder("blue");
 
@@ -23,8 +23,8 @@ fn main() {
 
     placeholder(format!("Interpolation {}", "Station"));
 
-    // WARNING: This is byte indexing, not character indexing.
-    // Character indexing can be done using `s.chars().nth(INDEX)`.
+    // ATENÇÃO: Este índice é baseado em bytes, não em caracteres.
+    // Para acessar caracteres, você pode usar `s.chars().nth(INDEX)`.
     placeholder(&String::from("abc")[0..1]);
 
     placeholder("  hello there ".trim());

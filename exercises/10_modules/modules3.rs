@@ -1,13 +1,13 @@
-// You can use the `use` keyword to bring module paths from modules from
-// anywhere and especially from the standard library into your scope.
+// Você pode usar `use` para importar caminhos de outros módulos para
+// seu escopo, especialmente os da biblioteca padrão.
 
-// TODO: Bring `SystemTime` and `UNIX_EPOCH` from the `std::time` module into
-// your scope. Bonus style points if you can do it with one line!
+// TODO: Importe `SystemTime` e `UNIX_EPOCH` do módulo `std::time` para
+// seu escopo. Você ganha pontos extras de estilo se fizer isso em uma linha!
 // use ???;
 
 fn main() {
     match SystemTime::now().duration_since(UNIX_EPOCH) {
-        Ok(n) => println!("1970-01-01 00:00:00 UTC was {} seconds ago!", n.as_secs()),
-        Err(_) => panic!("SystemTime before UNIX EPOCH!"),
+        Ok(n) => println!("1970-01-01 00:00:00 UTC foi há {} segundos!", n.as_secs()),
+        Err(_) => panic!("SystemTime anterior à UNIX_EPOCH!"),
     }
 }

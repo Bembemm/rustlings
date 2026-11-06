@@ -16,9 +16,14 @@ O projeto original e seus autores mantêm os créditos; este fork preserva a [li
 | 05 — Vetores | Traduzido |
 | 06 — Semântica de movimentação | Traduzido |
 | 07 — Estruturas | Traduzido |
+| 08 — Enumerações | Traduzido |
+| 09 — Strings | Traduzido |
+| 10 — Módulos | Traduzido |
+| 11 — HashMap | Traduzido |
+| 12 — Option | Traduzido |
 | Demais módulos, dicas e interface de terminal | Ainda em inglês |
 
-**Tradução em andamento.** Os módulos 00 a 07 já têm comentários e documentação em português. As mensagens usadas como dados pelos testes foram mantidas em inglês para preservar os resultados esperados. Os erros intencionais dos exercícios foram preservados. Não traduzimos palavras-chave da linguagem, nomes de arquivos ou identificadores essenciais para resolver os desafios.
+**Tradução em andamento.** Os módulos 00 a 12 já têm comentários e documentação em português. As mensagens usadas como dados pelos testes foram mantidas em inglês para preservar os resultados esperados. Os erros intencionais dos exercícios foram preservados. Não traduzimos palavras-chave da linguagem, nomes de arquivos ou identificadores essenciais para resolver os desafios.
 
 ## Como começar
 
