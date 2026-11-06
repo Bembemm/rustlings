@@ -107,15 +107,15 @@ impl InfoFile {
             Ok(file_content) => {
                 // LEAKING: The info file is used until the end of the program.
                 toml::de::from_str::<Self>(file_content.leak())
-                    .context("Failed to parse the `info.toml` file")?
+                    .context("Falha ao interpretar o arquivo `info.toml`")?
             }
             Err(e) => {
                 if e.kind() == ErrorKind::NotFound {
                     return toml::de::from_str(EMBEDDED_FILES.info_file)
-                        .context("Failed to parse the embedded `info.toml` file");
+                        .context("Falha ao interpretar o `info.toml` incorporado");
                 }
 
-                return Err(Error::from(e).context("Failed to read the `info.toml` file"));
+                return Err(Error::from(e).context("Falha ao ler o arquivo `info.toml`"));
             }
         };
 
@@ -127,5 +127,4 @@ impl InfoFile {
     }
 }
 
-const NO_EXERCISES_ERR: &str = "There are no exercises yet!
-Add at least one exercise before testing.";
+const NO_EXERCISES_ERR: &str = "Ainda não há exercícios!\nAdicione pelo menos um exercício antes de testar.";
