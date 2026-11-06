@@ -573,10 +573,10 @@ impl AppState {
     }
 }
 
-const BAD_INDEX_ERR: &str = "The current exercise index is higher than the number of exercises";
+const BAD_INDEX_ERR: &str = "O índice do exercício atual é maior que a quantidade de exercícios";
 const STATE_FILE_HEADER: &[u8] = b"DON'T EDIT THIS FILE!\n\n";
 const FINISH_LINE: &str = "+----------------------------------------------------+
-|          You made it to the finish line!           |
+|              Você chegou ao final!                 |
 +--------------------------  ------------------------+
                           \\/\x1b[31m
     ▒▒          ▒▒▒▒▒▒▒▒      ▒▒▒▒▒▒▒▒          ▒▒
