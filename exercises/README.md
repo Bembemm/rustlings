@@ -1,6 +1,6 @@
-# Exercise to Book Chapter mapping
+# Correspondência entre exercícios e capítulos do livro
 
-| Exercise               | Book Chapter        |
+| Exercício              | Capítulo do livro   |
 | ---------------------- | ------------------- |
 | variables              | §3.1                |
 | functions              | §3.3                |

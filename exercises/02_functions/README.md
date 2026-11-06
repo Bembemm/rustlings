@@ -1,8 +1,7 @@
-# Functions
+# Funções
 
-Here, you'll learn how to write functions and how the Rust compiler can help you debug errors even
-in more complex code.
+Neste módulo, você aprenderá a escrever funções e verá como o compilador Rust ajuda a encontrar erros, mesmo em códigos um pouco mais complexos.
 
-## Further information
+## Para saber mais
 
-- [How Functions Work](https://doc.rust-lang.org/book/ch03-03-how-functions-work.html)
+- [Como as funções funcionam](https://doc.rust-lang.org/book/ch03-03-how-functions-work.html)

@@ -1,7 +1,7 @@
-// TODO: Add the missing type of the argument `num` after the colon `:`.
+// TODO: Adicione o tipo do argumento `num` depois dos dois-pontos `:`.
 fn call_me(num:) {
     for i in 0..num {
-        println!("Ring! Call number {}", i + 1);
+        println!("Trim! Chamada número {}", i + 1);
     }
 }
 

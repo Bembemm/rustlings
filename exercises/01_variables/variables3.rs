@@ -1,6 +1,6 @@
 fn main() {
-    // TODO: Change the line below to fix the compiler error.
+    // TODO: Altere a linha abaixo para corrigir o erro do compilador.
     let x: i32;
 
-    println!("Number {x}");
+    println!("Número {x}");
 }

@@ -1,6 +1,6 @@
-// TODO: Change the line below to fix the compiler error.
+// TODO: Altere a linha abaixo para corrigir o erro do compilador.
 const NUMBER = 3;
 
 fn main() {
-    println!("Number: {NUMBER}");
+    println!("Número: {NUMBER}");
 }

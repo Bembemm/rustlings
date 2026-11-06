@@ -1,6 +1,6 @@
 fn main() {
-    // TODO: Add the missing keyword.
+    // TODO: Adicione a palavra-chave que está faltando.
     x = 5;
 
-    println!("x has the value {x}");
+    println!("x tem o valor {x}");
 }

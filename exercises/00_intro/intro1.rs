@@ -1,12 +1,12 @@
-// TODO: We sometimes encourage you to keep trying things on a given exercise
-// even after you already figured it out. If you got everything working and feel
-// ready for the next exercise, enter `n` in the terminal.
+// TODO: Às vezes, incentivamos você a continuar experimentando um exercício,
+// mesmo depois de encontrar a solução. Quando estiver tudo funcionando e você
+// quiser avançar, digite `n` no terminal.
 //
-// The exercise file will be reloaded when you change one of the lines below!
-// Try adding a new `println!` and check the updated output in the terminal.
+// O arquivo será recarregado quando você alterar uma das linhas abaixo!
+// Experimente adicionar outro `println!` e observe a saída no terminal.
 
 fn main() {
-    println!(r#"       Welcome to...                      "#);
+    println!(r#"       Bem-vindo ao...                      "#);
     println!(r#"                 _   _ _                  "#);
     println!(r#"  _ __ _   _ ___| |_| (_)_ __   __ _ ___  "#);
     println!(r#" | '__| | | / __| __| | | '_ \ / _` / __| "#);
@@ -14,11 +14,11 @@ fn main() {
     println!(r#" |_|   \__,_|___/\__|_|_|_| |_|\__, |___/ "#);
     println!(r#"                               |___/      "#);
     println!();
-    println!("This exercise compiles successfully. The remaining exercises contain a compiler");
-    println!("or logic error. The central concept behind Rustlings is to fix these errors and");
-    println!("solve the exercises. Good luck!");
+    println!("Este exercício compila corretamente. Os próximos apresentam erros de compilação");
+    println!("ou de lógica. A proposta do Rustlings é corrigir esses erros e");
+    println!("resolver os desafios. Bons estudos!");
     println!();
-    println!("The file of this exercise is `exercises/00_intro/intro1.rs`. Have a look!");
-    println!("The current exercise path will be always shown under the progress bar.");
-    println!("You can click on the path to open the exercise file in your editor.");
+    println!("O arquivo deste exercício é `exercises/00_intro/intro1.rs`. Abra-o!");
+    println!("O caminho do exercício atual aparece abaixo da barra de progresso.");
+    println!("Você pode clicar nesse caminho para abrir o arquivo no editor.");
 }

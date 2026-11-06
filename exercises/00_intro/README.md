@@ -1,8 +1,8 @@
-# Intro
+# Introdução
 
-Rust uses the `print!` and `println!` macros to print text to the console.
+Rust utiliza as macros `print!` e `println!` para exibir texto no terminal. A macro `println!` também adiciona uma quebra de linha ao final.
 
-## Further information
+## Para saber mais
 
-- [Hello World](https://doc.rust-lang.org/rust-by-example/hello.html)
-- [Formatted print](https://doc.rust-lang.org/rust-by-example/hello/print.html)
+- [Olá, mundo!](https://doc.rust-lang.org/rust-by-example/hello.html)
+- [Impressão formatada](https://doc.rust-lang.org/rust-by-example/hello/print.html)

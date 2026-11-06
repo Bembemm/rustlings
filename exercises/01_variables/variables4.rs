@@ -1,8 +1,8 @@
-// TODO: Fix the compiler error.
+// TODO: Corrija o erro do compilador.
 fn main() {
     let x = 3;
-    println!("Number {x}");
+    println!("Número {x}");
 
-    x = 5; // Don't change this line
-    println!("Number {x}");
+    x = 5; // Não altere esta linha
+    println!("Número {x}");
 }

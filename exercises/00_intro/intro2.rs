@@ -1,4 +1,4 @@
 fn main() {
-    // TODO: Fix the code to print "Hello world!".
-    printline!("Hello world!");
+    // TODO: Corrija o código para exibir "Olá, mundo!".
+    printline!("Olá, mundo!");
 }
