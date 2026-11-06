@@ -1,80 +1,80 @@
 +++
-title = "Setup"
+title = "Configuração"
 +++
 
-## Installing Rust
+## Instalando o Rust
 
-Before installing Rustlings, you must have the **latest version of Rust** installed.
-Visit [www.rust-lang.org/tools/install](https://www.rust-lang.org/tools/install) for further instructions.
-This will also install _Cargo_, Rust's package/project manager.
+Antes de instalar o Rustlings, você precisa ter a **versão mais recente do Rust** instalada.
+Visite [www.rust-lang.org/tools/install](https://www.rust-lang.org/tools/install) para ver as instruções.
+Isso também instalará o _Cargo_, gerenciador de pacotes e projetos do Rust.
 
-> 🐧 If you are on **Linux**, make sure you have `gcc` installed (_for a linker_).
+> 🐧 Se você usa **Linux**, certifique-se de ter o `gcc` instalado (_para atuar como linker_).
 >
 > Debian: `sudo apt install gcc`\
 > Fedora: `sudo dnf install gcc`
 >
-> 🍎 If you are on **MacOS**, make sure you have _Xcode and its developer tools_ installed: `xcode-select --install`
+> 🍎 Se você usa **macOS**, certifique-se de ter o _Xcode e suas ferramentas de desenvolvimento_ instalados: `xcode-select --install`
 
-## Installing Rustlings
+## Instalando o Rustlings
 
-The following command will download and compile Rustlings:
+O comando abaixo baixa e compila o Rustlings:
 
 ```bash
 cargo install rustlings
 ```
 
-{% <details summary="If the installation fails…"> %}
+{% <details summary="Se a instalação falhar…"> %}
 
-- Make sure you have the latest Rust version by running `rustup update`
-- Try adding the `--locked` flag: `cargo install rustlings --locked`
-- Otherwise, please [report the issue](https://github.com/rust-lang/rustlings/issues/new)
+- Confirme que você está usando a versão mais recente do Rust executando `rustup update`
+- Tente adicionar a flag `--locked`: `cargo install rustlings --locked`
+- Se ainda falhar, [relate o problema](https://github.com/rust-lang/rustlings/issues/new)
 
 {% </details> %}
 
-## Initialization
+## Inicialização
 
-After installing Rustlings, run the following command to initialize the `rustlings/` directory:
+Depois de instalar o Rustlings, execute o comando abaixo para criar o diretório `rustlings/`:
 
 ```bash
 rustlings init
 ```
 
-{% <details summary="If the command <code>rustlings</code> can't be found…"> %}
+{% <details summary="Se o comando <code>rustlings</code> não for encontrado…"> %}
 
-You are probably using Linux and installed Rust using your package manager.
+Provavelmente você está no Linux e instalou o Rust usando o gerenciador de pacotes da distribuição.
 
-Cargo installs binaries to the directory `~/.cargo/bin`.
-Sadly, package managers often don't add `~/.cargo/bin` to your `PATH` environment variable.
+O Cargo instala executáveis no diretório `~/.cargo/bin`.
+Infelizmente, alguns gerenciadores de pacotes não adicionam `~/.cargo/bin` à variável de ambiente `PATH`.
 
-- Either add `~/.cargo/bin` manually to `PATH`
-- Or uninstall Rust from the package manager and [install it using the official way with `rustup`](https://www.rust-lang.org/tools/install)
+- Adicione `~/.cargo/bin` manualmente ao `PATH`
+- Ou desinstale o Rust instalado pelo gerenciador de pacotes e [instale-o pelo método oficial usando `rustup`](https://www.rust-lang.org/tools/install)
 
 {% </details> %}
 
-Now, go into the newly initialized directory and launch Rustlings for further instructions on getting started with the exercises:
+Agora entre no diretório recém-criado e execute o Rustlings para receber as próximas instruções:
 
 ```bash
 cd rustlings/
 rustlings
 ```
 
-## Working environment
+## Ambiente de trabalho
 
 ### Editor
 
-Our general recommendation is [VS Code](https://code.visualstudio.com/) with the [rust-analyzer plugin](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer).
-But any editor that supports [rust-analyzer](https://rust-analyzer.github.io/) should be enough for working on the exercises.
+Nossa recomendação geral é o [VS Code](https://code.visualstudio.com/) com a extensão [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer).
+Mas qualquer editor compatível com [rust-analyzer](https://rust-analyzer.github.io/) deve funcionar bem para os exercícios.
 
 ### Terminal
 
-While working with Rustlings, please use a modern terminal for the best user experience.
-The default terminal on Linux and Mac should be sufficient.
-On Windows, we recommend the [Windows Terminal](https://aka.ms/terminal).
+Ao usar o Rustlings, prefira um terminal moderno para ter a melhor experiência.
+O terminal padrão do Linux e do macOS normalmente é suficiente.
+No Windows, recomendamos o [Windows Terminal](https://aka.ms/terminal).
 
-### Offline documentation
+### Documentação offline
 
-Whenever you're working on Rustlings offline, you can access a local copy of the book or the standard library documentation by running `rustup doc --book` or `rustup doc --std`.
+Se estiver usando o Rustlings sem internet, você pode abrir cópias locais do livro ou da documentação da biblioteca padrão com `rustup doc --book` ou `rustup doc --std`.
 
-## Usage
+## Uso
 
-After being done with the setup, visit the [**usage**](@/usage/index.md) page for some info about using Rustlings 🚀
+Depois da configuração, visite a página de [**uso**](@/usage/index.md) para aprender como trabalhar com o Rustlings 🚀

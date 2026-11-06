@@ -1,6 +1,6 @@
 base_url = "https://rustlings.rust-lang.org"
 title = "Rustlings"
-description = "Small exercises to get you used to reading and writing Rust code!"
+description = "Pequenos exercícios para praticar leitura e escrita de código Rust!"
 
 compile_sass = false
 build_search_index = false
@@ -18,24 +18,24 @@ logo_path = "images/happy_ferris.svg"
 name = "Rustlings"
 url = "@/_index.md"
 [[extra.menu_items]]
-name = "Setup"
+name = "Configuração"
 url = "@/setup/index.md"
 [[extra.menu_items]]
-name = "Usage"
+name = "Uso"
 url = "@/usage/index.md"
 [[extra.menu_items]]
-name = "Community Exercises"
+name = "Exercícios da comunidade"
 url = "@/community-exercises/index.md"
 [[extra.menu_items]]
-name = "Q&A"
+name = "Perguntas e respostas"
 url = "https://github.com/rust-lang/rustlings/discussions/categories/q-a?discussions_q="
 
 [[extra.footer_items]]
-name = "Repository"
+name = "Repositório"
 url = "https://github.com/rust-lang/rustlings"
 [[extra.footer_items]]
-name = "Changelog"
+name = "Histórico de alterações"
 url = "https://github.com/rust-lang/rustlings/blob/main/CHANGELOG.md"
 [[extra.footer_items]]
-name = "MIT License"
+name = "Licença MIT"
 url = "https://github.com/rust-lang/rustlings/blob/main/LICENSE"

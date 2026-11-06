@@ -1,75 +1,75 @@
 +++
-title = "Community Exercises"
+title = "Exercícios da comunidade"
 +++
 
-## List of Community Exercises
+## Lista de exercícios da comunidade
 
-- 🇯🇵 [Japanese Rustlings](https://github.com/sotanengel/rustlings-jp)：A Japanese translation of the Rustlings exercises.
-- 🇨🇳 [Simplified Chinese Rustlings](https://github.com/SandmeyerX/rustlings-zh-cn): A simplified Chinese translation of the Rustlings exercises.
-- 🇺🇦 [Rustlings in Ukrainian](https://github.com/noroutine/rustlings-ua): Translation of the Rustlings exercises in Ukrainian.
-- 🇰🇷 [Korean Rustlings](https://github.com/eoncheole/rustlings-kr): A Korean translation of the Rustlings exercises.
+- 🇯🇵 [Rustlings em japonês](https://github.com/sotanengel/rustlings-jp): tradução japonesa dos exercícios do Rustlings.
+- 🇨🇳 [Rustlings em chinês simplificado](https://github.com/SandmeyerX/rustlings-zh-cn): tradução para chinês simplificado.
+- 🇺🇦 [Rustlings em ucraniano](https://github.com/noroutine/rustlings-ua): tradução ucraniana dos exercícios.
+- 🇰🇷 [Rustlings em coreano](https://github.com/eoncheole/rustlings-kr): tradução coreana dos exercícios.
 
-> You can use the same `rustlings` program that you installed with `cargo install rustlings` to run community exercises.
+> Você pode usar o mesmo programa `rustlings`, instalado com `cargo install rustlings`, para executar exercícios da comunidade.
 
-## Creating Community Exercises
+## Criando exercícios da comunidade
 
-Rustling's support for community exercises allows you to create your own exercises to focus on some specific topic.
-You could also offer a translation of the original Rustlings exercises as community exercises.
+O suporte do Rustlings a exercícios da comunidade permite criar exercícios próprios focados em assuntos específicos.
+Você também pode oferecer uma tradução dos exercícios oficiais no formato de exercícios da comunidade.
 
-### Getting Started
+### Começando
 
-To create community exercises, install Rustlings and run `rustlings dev new PROJECT_NAME`.
-This command will, similar to `cargo new PROJECT_NAME`, create the template directory `PROJECT_NAME` with all what you need to get started.
+Para criar exercícios da comunidade, instale o Rustlings e execute `rustlings dev new PROJECT_NAME`.
+De forma semelhante a `cargo new PROJECT_NAME`, esse comando cria o diretório-modelo `PROJECT_NAME` com os arquivos necessários.
 
-_Read the comments_ in the generated `info.toml` file to understand its format.
-It allows you to set a custom welcome and final message and specify the metadata of every exercise.
+_Leia os comentários_ do arquivo `info.toml` gerado para entender o formato.
+Nele você pode definir mensagens personalizadas de boas-vindas e conclusão, além dos metadados de cada exercício.
 
-### Creating an Exercise
+### Criando um exercício
 
-Here is an example of the metadata of one exercise:
+Exemplo de metadados de um exercício:
 
 ```toml
 [[exercises]]
 name = "intro1"
 hint = """
-To finish this exercise, you need to …
-These links might help you …"""
+Para concluir este exercício, você precisa …
+Estes links podem ajudar …"""
 ```
 
-After entering this in `info.toml`, create the file `intro1.rs` in the `exercises/` directory.
-The exercise needs to contain a `main` function, but it can be empty.
-Adding tests is recommended.
-Look at the official Rustlings exercises for inspiration.
+Depois de adicionar isso ao `info.toml`, crie o arquivo `intro1.rs` no diretório `exercises/`.
+O exercício precisa ter uma função `main`, que pode estar vazia.
+Adicionar testes é recomendado.
+Use os exercícios oficiais do Rustlings como referência.
 
-You can optionally add a solution file `intro1.rs` to the `solutions/` directory.
+Opcionalmente, você pode adicionar um arquivo de solução `intro1.rs` ao diretório `solutions/`.
 
-Now, run `rustlings dev check`.
-It will tell you about any issues with your exercises.
-For example, it will tell you to run `rustlings dev update` to update the `Cargo.toml` file to include the new exercise `intro1`.
+Depois execute `rustlings dev check`.
+O comando informará qualquer problema encontrado nos exercícios.
+Por exemplo, pode solicitar `rustlings dev update` para atualizar o `Cargo.toml` e incluir o novo exercício `intro1`.
 
-`rustlings dev check` will also run your solutions (if you have any) to make sure that they run successfully.
+`rustlings dev check` também executa as soluções, quando existirem, para verificar se funcionam corretamente.
 
-That's it!
-You finished your first exercise 🎉
+Pronto!
+Você concluiu seu primeiro exercício 🎉
 
 ### Cargo.toml
 
-Except of the `bin` list, you can modify the `Cargo.toml` file as you want.
+Com exceção da lista `bin`, você pode alterar o arquivo `Cargo.toml` como quiser.
 
-> The `bin` list is automatically updated by running `rustlings dev update`
+> A lista `bin` é atualizada automaticamente ao executar `rustlings dev update`
 
-- You can add dependencies in the `[dependencies]` table.
-- You might want to [configure some lints](https://doc.rust-lang.org/cargo/reference/manifest.html#the-lints-section) for all exercises. You can do so in the `[lints.rust]` and `[lints.clippy]` tables.
+- Você pode adicionar dependências na tabela `[dependencies]`.
+- Também pode [configurar lints](https://doc.rust-lang.org/cargo/reference/manifest.html#the-lints-section) para todos os exercícios usando as tabelas `[lints.rust]` e `[lints.clippy]`.
 
-### Publishing
+### Publicação
 
-Now, add more exercises and publish them as a Git repository.
+Adicione mais exercícios e publique o projeto como um repositório Git.
 
-Users just have to clone that repository and run `rustlings` in it to start working on your exercises (just like the official ones).
+Os usuários só precisam clonar esse repositório e executar `rustlings` dentro dele para começar, assim como nos exercícios oficiais.
 
-One difference to the official exercises is that the solution files will not be hidden until the user finishes an exercise.
-But you can trust your users to not open the solution too early 😉
+Uma diferença é que, nos exercícios da comunidade, os arquivos de solução não ficam ocultos até a conclusão do exercício.
+Mas você pode confiar que os alunos não vão abrir a solução antes da hora 😉
 
-### Sharing
+### Compartilhamento
 
-After publishing your community exercises, open an issue or a pull request in the [official Rustlings repository](https://github.com/rust-lang/rustlings) to add your project to the [list of community exercises](#list-of-community-exercises) 😃
+Depois de publicar seus exercícios da comunidade, abra uma issue ou pull request no [repositório oficial do Rustlings](https://github.com/rust-lang/rustlings) para adicionar seu projeto à [lista de exercícios da comunidade](#lista-de-exercicios-da-comunidade) 😃

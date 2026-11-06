@@ -1,53 +1,53 @@
 +++
-title = "Usage"
+title = "Uso"
 +++
 
-## Doing exercises
+## Fazendo os exercícios
 
-The exercises are sorted by topic and can be found in the subdirectory `exercises/<topic>`.
-For every topic, there is an additional `README.md` file with some resources to get you started on the topic.
-We highly recommend that you have a look at them before you start 📚️
+Os exercícios são organizados por assunto e ficam no subdiretório `exercises/<topic>`.
+Cada assunto também possui um arquivo `README.md` com recursos para ajudar você a começar.
+Recomendamos fortemente lê-lo antes de iniciar os exercícios 📚️
 
-Most exercises contain an error that keeps them from compiling, and it's up to you to fix it!
-Some exercises contain tests that need to pass for the exercise to be done ✅
+A maioria dos exercícios contém algum erro que impede a compilação, e sua tarefa é corrigi-lo.
+Alguns exercícios possuem testes que precisam passar para que o exercício seja considerado concluído ✅
 
-Search for `TODO` and `todo!()` to find out what you need to change.
-Ask for hints by entering `h` in the _watch mode_ 💡
+Procure por `TODO` e `todo!()` para descobrir o que precisa ser alterado.
+Para pedir uma dica, pressione `h` no _modo de acompanhamento_ 💡
 
-## Watch Mode
+## Modo de acompanhamento
 
-After the [initialization](@/setup/index.md#initialization), Rustlings can be launched by simply running the command `rustlings`.
+Depois da [inicialização](@/setup/index.md#inicializacao), basta executar o comando `rustlings`.
 
-This will start the _watch mode_ which walks you through the exercises in a predefined order (what we think is best for newcomers).
-It will rerun the current exercise automatically every time you change the exercise's file in the `exercises/` directory.
+Isso inicia o _modo de acompanhamento_, que conduz você pelos exercícios em uma ordem predefinida — a ordem que consideramos mais adequada para iniciantes.
+O exercício atual é executado novamente automaticamente sempre que você altera o arquivo correspondente dentro de `exercises/`.
 
-{% <details summary="If detecting file changes in the <code>exercises/</code> directory fails…"> %}
+{% <details summary="Se a detecção de alterações em <code>exercises/</code> falhar…"> %}
 
-You can add the **`--manual-run`** flag (`rustlings --manual-run`) to manually rerun the current exercise by entering `r` in the watch mode.
+Você pode adicionar a flag **`--manual-run`** (`rustlings --manual-run`) e então pressionar `r` no modo de acompanhamento para executar manualmente o exercício atual.
 
-Please [report the issue](https://github.com/rust-lang/rustlings/issues/new) with some information about your operating system and whether you run Rustlings in a container or a virtual machine (e.g. WSL).
+[Relate o problema](https://github.com/rust-lang/rustlings/issues/new) informando seu sistema operacional e se o Rustlings está sendo executado em container ou máquina virtual, como WSL.
 
 {% </details> %}
 
-## Exercise List
+## Lista de exercícios
 
-In the [watch mode](#watch-mode) (after launching `rustlings`), you can enter `l` to open the interactive exercise list.
+No [modo de acompanhamento](#modo-de-acompanhamento), pressione `l` para abrir a lista interativa de exercícios.
 
-The list allows you to…
+A lista permite:
 
-- See the status of all exercises (done or pending)
-- `c`: Continue at another exercise (temporarily skip some exercises or go back to a previous one)
-- `r`: Reset status and file of the selected exercise (you need to _reload/reopen_ its file in your editor afterwards)
+- Ver o status de todos os exercícios (concluídos ou pendentes)
+- `c`: continuar a partir de outro exercício, pulando alguns temporariamente ou voltando a um anterior
+- `r`: restaurar o status e o arquivo do exercício selecionado; depois disso, recarregue ou reabra o arquivo no editor
 
-See the footer of the list for all possible keys.
+Veja o rodapé da lista para conhecer todas as teclas disponíveis.
 
-## Questions?
+## Dúvidas?
 
-If you need any help while doing the exercises and the builtin hints aren't helpful, feel free to ask in the [_Q&A_ discussions](https://github.com/rust-lang/rustlings/discussions/categories/q-a?discussions_q=) if your question isn't answered there 💡
+Se precisar de ajuda e as dicas internas não forem suficientes, você pode perguntar nas discussões de [_Q&A_](https://github.com/rust-lang/rustlings/discussions/categories/q-a?discussions_q=), caso sua dúvida ainda não tenha sido respondida 💡
 
-## Continuing On
+## E depois?
 
-Once you've completed Rustlings, put your new knowledge to good use!
-Continue practicing your Rust skills by building your own projects, contributing to Rustlings, or finding other open-source projects to contribute to.
+Quando terminar o Rustlings, coloque o que aprendeu em prática.
+Continue desenvolvendo suas habilidades em Rust criando projetos próprios, contribuindo com o Rustlings ou colaborando com outros projetos de código aberto.
 
-> If you want to create your own Rustlings exercises, visit the [**community exercises**](@/community-exercises/index.md) page 🏗️
+> Se quiser criar seus próprios exercícios no formato Rustlings, visite a página de [**exercícios da comunidade**](@/community-exercises/index.md) 🏗️
