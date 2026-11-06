@@ -117,7 +117,7 @@ fn run_watch(
             WatchEvent::Input(InputEvent::List) => return Ok(WatchExit::List),
             WatchEvent::Input(InputEvent::Reset) => watch_state.reset_exercise(&mut stdout)?,
             WatchEvent::Input(InputEvent::Quit) => {
-                stdout.write_all(QUIT_MSG)?;
+                stdout.write_all(QUIT_MSG.as_bytes())?;
                 break;
             }
             WatchEvent::FileChange { exercise_ind } => {
@@ -128,7 +128,7 @@ fn run_watch(
             }
             WatchEvent::NotifyErr(e) => return Err(Error::from(e).context(NOTIFY_ERR)),
             WatchEvent::TerminalEventErr(e) => {
-                return Err(Error::from(e).context("Terminal event listener failed"));
+                return Err(Error::from(e).context("Falha no listener de eventos do terminal"));
             }
         }
     }
@@ -179,15 +179,6 @@ pub fn watch(
     watch_list_loop(app_state, notify_exercise_names)
 }
 
-const QUIT_MSG: &[u8] = b"q\n
-We hope you're enjoying learning Rust!
-If you want to continue working on the exercises at a later point, you can simply run `rustlings` again in this directory.
-";
+const QUIT_MSG: &str = "q\n\nEsperamos que você esteja gostando de aprender Rust!\nSe quiser continuar os exercícios mais tarde, basta executar `rustlings` novamente neste diretório.\n";
 
-const NOTIFY_ERR: &str = "
-The automatic detection of exercise file changes failed :(
-Please try running `rustlings` again.
-
-If you keep getting this error, run `rustlings --manual-run` to deactivate the file watcher.
-You need to manually trigger running the current exercise using `r` then.
-";
+const NOTIFY_ERR: &str = "\nA detecção automática de alterações nos arquivos dos exercícios falhou :(\nTente executar `rustlings` novamente.\n\nSe o erro continuar, execute `rustlings --manual-run` para desativar o monitoramento automático.\nNesse modo, use `r` para executar manualmente o exercício atual.\n";
