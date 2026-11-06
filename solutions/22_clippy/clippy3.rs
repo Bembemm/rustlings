@@ -15,17 +15,17 @@ fn main() {
         -1, -2, -3,
         -4, -5, -6,
     ];
-    println!("My array! Here it is: {my_arr:?}");
+    println!("Meu array! Aqui está: {my_arr:?}");
 
     let mut my_vec = vec![1, 2, 3, 4, 5];
     // `resize` modifica o vetor em vez de retornar um novo.
     // `resize(0, …)` esvazia um vetor, então é melhor usar `clear`.
     my_vec.clear();
-    println!("This Vec is empty, see? {my_vec:?}");
+    println!("Este Vec está vazio, viu? {my_vec:?}");
 
     let mut value_a = 45;
     let mut value_b = 66;
     // Use `mem::swap` para trocar corretamente dois valores.
     mem::swap(&mut value_a, &mut value_b);
-    println!("value a: {value_a}; value b: {value_b}");
+    println!("valor a: {value_a}; valor b: {value_b}");
 }

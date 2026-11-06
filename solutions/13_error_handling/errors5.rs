@@ -24,8 +24,8 @@ enum CreationError {
 impl fmt::Display for CreationError {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         let description = match *self {
-            CreationError::Negative => "number is negative",
-            CreationError::Zero => "number is zero",
+            CreationError::Negative => "número negativo",
+            CreationError::Zero => "número igual a zero",
         };
         f.write_str(description)
     }
@@ -49,6 +49,6 @@ impl PositiveNonzeroInteger {
 fn main() -> Result<(), Box<dyn Error>> {
     let pretend_user_input = "42";
     let x: i64 = pretend_user_input.parse()?;
-    println!("output={:?}", PositiveNonzeroInteger::new(x)?);
+    println!("saída={:?}", PositiveNonzeroInteger::new(x)?);
     Ok(())
 }

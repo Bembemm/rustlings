@@ -13,5 +13,5 @@ fn main() {
 
     let area = pi * radius.powi(2);
 
-    println!("The area of a circle with radius {radius:.2} is {area:.5}");
+    println!("A área de um círculo de raio {radius:.2} é {area:.5}");
 }

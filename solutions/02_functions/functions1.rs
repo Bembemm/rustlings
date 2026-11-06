@@ -1,6 +1,6 @@
 // Uma função chamada `call_me`, sem argumentos e sem valor de retorno.
 fn call_me() {
-    println!("Hello world!");
+    println!("Olá, mundo!");
 }
 
 fn main() {

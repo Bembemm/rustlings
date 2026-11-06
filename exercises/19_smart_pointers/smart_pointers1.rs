@@ -25,9 +25,9 @@ fn create_non_empty_list() -> List {
 }
 
 fn main() {
-    println!("This is an empty cons list: {:?}", create_empty_list());
+    println!("Esta é uma cons list vazia: {:?}", create_empty_list());
     println!(
-        "This is a non-empty cons list: {:?}",
+        "Esta é uma cons list não vazia: {:?}",
         create_non_empty_list(),
     );
 }

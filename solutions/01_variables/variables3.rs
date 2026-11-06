@@ -5,11 +5,11 @@ fn main() {
     // Portanto, primeiro precisamos atribuir um valor.
     let x: i32 = 42;
 
-    println!("Number {x}");
+    println!("Número {x}");
 
     // É possível declarar uma variável e inicializá-la depois.
     // Mas ela não pode ser usada antes da inicialização.
     let y: i32;
     y = 42;
-    println!("Number {y}");
+    println!("Número {y}");
 }

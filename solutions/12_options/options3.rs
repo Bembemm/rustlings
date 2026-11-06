@@ -10,17 +10,17 @@ fn main() {
     // Solução 1: fazer o `match` sobre `Option` (não `&Option`) sem mover
     // o valor para fora da variante `Some`.
     match optional_point {
-        Some(ref p) => println!("Coordinates are {},{}", p.x, p.y),
+        Some(ref p) => println!("As coordenadas são {},{}", p.x, p.y),
         //   ^^^ adicionado
-        _ => panic!("No match!"),
+        _ => panic!("Nenhuma correspondência!"),
     }
 
     // Solução 2: fazer o `match` sobre uma referência (`&Option`) adicionando `&` antes de
     // `optional_point`.
     match &optional_point {
         //^ adicionado
-        Some(p) => println!("Coordinates are {},{}", p.x, p.y),
-        _ => panic!("No match!"),
+        Some(p) => println!("As coordenadas são {},{}", p.x, p.y),
+        _ => panic!("Nenhuma correspondência!"),
     }
 
     println!("{optional_point:?}");

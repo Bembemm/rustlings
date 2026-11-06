@@ -14,7 +14,7 @@ fn main() {
         let handle = thread::spawn(move || {
             let start = Instant::now();
             thread::sleep(Duration::from_millis(250));
-            println!("Thread {i} done");
+            println!("Thread {i} concluída");
             start.elapsed().as_millis()
         });
         handles.push(handle);
@@ -27,11 +27,11 @@ fn main() {
     }
 
     if results.len() != 10 {
-        panic!("Oh no! Some thread isn't done yet!");
+        panic!("Ah não! Alguma thread ainda não terminou!");
     }
 
     println!();
     for (i, result) in results.into_iter().enumerate() {
-        println!("Thread {i} took {result}ms");
+        println!("Thread {i} levou {result} ms");
     }
 }

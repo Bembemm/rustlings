@@ -3,9 +3,9 @@ fn main() {
     let a = [42; 100];
 
     if a.len() >= 100 {
-        println!("Wow, that's a big array!");
+        println!("Uau, que array grande!");
     } else {
-        println!("Meh, I eat arrays like that for breakfast.");
-        panic!("Array not big enough, more elements needed");
+        println!("Ah, arrays desse tamanho eu como no café da manhã.");
+        panic!("O array ainda é pequeno; adicione mais elementos");
     }
 }

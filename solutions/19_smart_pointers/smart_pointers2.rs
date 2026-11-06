@@ -22,7 +22,7 @@ enum Planet {
 
 impl Planet {
     fn details(&self) {
-        println!("Hi from {self:?}!");
+        println!("Olá de {self:?}!");
     }
 }
 
@@ -37,65 +37,65 @@ mod tests {
     #[test]
     fn rc1() {
         let sun = Rc::new(Sun);
-        println!("reference count = {}", Rc::strong_count(&sun)); // 1 reference
+        println!("contagem de referências = {}", Rc::strong_count(&sun)); // 1 referência
 
         let mercury = Planet::Mercury(Rc::clone(&sun));
-        println!("reference count = {}", Rc::strong_count(&sun)); // 2 references
+        println!("contagem de referências = {}", Rc::strong_count(&sun)); // 2 referências
         mercury.details();
 
         let venus = Planet::Venus(Rc::clone(&sun));
-        println!("reference count = {}", Rc::strong_count(&sun)); // 3 references
+        println!("contagem de referências = {}", Rc::strong_count(&sun)); // 3 referências
         venus.details();
 
         let earth = Planet::Earth(Rc::clone(&sun));
-        println!("reference count = {}", Rc::strong_count(&sun)); // 4 references
+        println!("contagem de referências = {}", Rc::strong_count(&sun)); // 4 referências
         earth.details();
 
         let mars = Planet::Mars(Rc::clone(&sun));
-        println!("reference count = {}", Rc::strong_count(&sun)); // 5 references
+        println!("contagem de referências = {}", Rc::strong_count(&sun)); // 5 referências
         mars.details();
 
         let jupiter = Planet::Jupiter(Rc::clone(&sun));
-        println!("reference count = {}", Rc::strong_count(&sun)); // 6 references
+        println!("contagem de referências = {}", Rc::strong_count(&sun)); // 6 referências
         jupiter.details();
 
         let saturn = Planet::Saturn(Rc::clone(&sun));
-        println!("reference count = {}", Rc::strong_count(&sun)); // 7 references
+        println!("contagem de referências = {}", Rc::strong_count(&sun)); // 7 referências
         saturn.details();
 
         let uranus = Planet::Uranus(Rc::clone(&sun));
-        println!("reference count = {}", Rc::strong_count(&sun)); // 8 references
+        println!("contagem de referências = {}", Rc::strong_count(&sun)); // 8 referências
         uranus.details();
 
         let neptune = Planet::Neptune(Rc::clone(&sun));
-        println!("reference count = {}", Rc::strong_count(&sun)); // 9 references
+        println!("contagem de referências = {}", Rc::strong_count(&sun)); // 9 referências
         neptune.details();
 
         assert_eq!(Rc::strong_count(&sun), 9);
 
         drop(neptune);
-        println!("reference count = {}", Rc::strong_count(&sun)); // 8 references
+        println!("contagem de referências = {}", Rc::strong_count(&sun)); // 8 referências
 
         drop(uranus);
-        println!("reference count = {}", Rc::strong_count(&sun)); // 7 references
+        println!("contagem de referências = {}", Rc::strong_count(&sun)); // 7 referências
 
         drop(saturn);
-        println!("reference count = {}", Rc::strong_count(&sun)); // 6 references
+        println!("contagem de referências = {}", Rc::strong_count(&sun)); // 6 referências
 
         drop(jupiter);
-        println!("reference count = {}", Rc::strong_count(&sun)); // 5 references
+        println!("contagem de referências = {}", Rc::strong_count(&sun)); // 5 referências
 
         drop(mars);
-        println!("reference count = {}", Rc::strong_count(&sun)); // 4 references
+        println!("contagem de referências = {}", Rc::strong_count(&sun)); // 4 referências
 
         drop(earth);
-        println!("reference count = {}", Rc::strong_count(&sun)); // 3 references
+        println!("contagem de referências = {}", Rc::strong_count(&sun)); // 3 referências
 
         drop(venus);
-        println!("reference count = {}", Rc::strong_count(&sun)); // 2 references
+        println!("contagem de referências = {}", Rc::strong_count(&sun)); // 2 referências
 
         drop(mercury);
-        println!("reference count = {}", Rc::strong_count(&sun)); // 1 reference
+        println!("contagem de referências = {}", Rc::strong_count(&sun)); // 1 referência
 
         assert_eq!(Rc::strong_count(&sun), 1);
     }

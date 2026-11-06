@@ -21,10 +21,10 @@ fn main() -> Result<(), ParseIntError> {
     let cost = total_cost(pretend_user_input)?;
 
     if cost > tokens {
-        println!("You can't afford that many!");
+        println!("Você não tem fichas suficientes para comprar tudo isso!");
     } else {
         tokens -= cost;
-        println!("You now have {tokens} tokens.");
+        println!("Agora você tem {tokens} fichas.");
     }
 
     // Esta linha foi adicionada para retornar a variante `Ok` do `Result` esperado.

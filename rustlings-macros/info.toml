@@ -26,7 +26,7 @@ Você também pode contribuir com seus próprios exercícios para ajudar a comun
 Antes de relatar um problema ou contribuir, leia as diretrizes:
 https://github.com/rust-lang/rustlings/blob/main/CONTRIBUTING.md"""
 
-# INTRO
+# INTRODUÇÃO
 
 [[exercises]]
 name = "intro1"
@@ -47,7 +47,7 @@ O compilador está avisando que o nome da macro de impressão está incorreto.
 Ele também sugere uma alternativa.
 """
 
-# VARIABLES
+# VARIÁVEIS
 
 [[exercises]]
 name = "variables1"
@@ -133,7 +133,7 @@ Leia mais:
 https://doc.rust-lang.org/book/ch03-01-variables-and-mutability.html#constants
 """
 
-# FUNCTIONS
+# FUNÇÕES
 
 [[exercises]]
 name = "functions1"
@@ -193,7 +193,7 @@ Há duas soluções:
 2. Remover o ponto e vírgula depois de `num * num`
 """
 
-# IF
+# CONDICIONAIS (`if`)
 
 [[exercises]]
 name = "if1"
@@ -239,7 +239,7 @@ hint = """
 Sem dicas desta vez ;)
 """
 
-# PRIMITIVE TYPES
+# TIPOS PRIMITIVOS
 
 [[exercises]]
 name = "primitive_types1"
@@ -312,7 +312,7 @@ acessar o elemento pelo índice, como mostrado no último exemplo desta seção:
 https://doc.rust-lang.org/book/ch03-02-data-types.html#the-tuple-type
 """
 
-# VECS
+# VETORES (`Vec`)
 
 [[exercises]]
 name = "vecs1"
@@ -336,7 +336,7 @@ hint = """
 Use o método `.push()` do vetor para adicionar novos elementos.
 """
 
-# MOVE SEMANTICS
+# SEMÂNTICA DE MOVIMENTAÇÃO
 
 [[exercises]]
 name = "move_semantics1"
@@ -401,7 +401,7 @@ Depois de corrigir isso, a assinatura de `string_uppercase` também precisará
 ser ajustada.
 """
 
-# STRUCTS
+# ESTRUTURAS (`structs`)
 
 [[exercises]]
 name = "structs1"
@@ -445,7 +445,7 @@ Leia mais:
 https://doc.rust-lang.org/book/ch05-03-method-syntax.html
 """
 
-# ENUMS
+# ENUMERAÇÕES (`enums`)
 
 [[exercises]]
 name = "enums1"
@@ -545,7 +545,7 @@ deve virar:
 porque `"blue"` é `&str`, não `String`.
 """
 
-# MODULES
+# MÓDULOS
 
 [[exercises]]
 name = "modules1"
@@ -582,7 +582,7 @@ Adicione uma instrução `use` para trazê-los ao escopo. Você pode importar os
 dois em uma única linha usando caminhos aninhados.
 """
 
-# HASHMAPS
+# HASH MAPS
 
 [[exercises]]
 name = "hashmaps1"
@@ -625,7 +625,7 @@ hint = """
 O operador `+` pode concatenar uma `String` com um `&str`.
 """
 
-# OPTIONS
+# OPTION
 
 [[exercises]]
 name = "options1"
@@ -668,7 +668,7 @@ Depois de corrigir, consulte:
 https://doc.rust-lang.org/std/keyword.ref.html
 """
 
-# ERROR HANDLING
+# TRATAMENTO DE ERROS
 
 [[exercises]]
 name = "errors1"
@@ -753,7 +753,7 @@ Documentação:
 https://doc.rust-lang.org/std/result/enum.Result.html#method.map_err
 """
 
-# Generics
+# GENÉRICOS
 
 [[exercises]]
 name = "generics1"
@@ -887,7 +887,7 @@ hint = """
 Deixe o compilador orientar você :)
 """
 
-# TESTS
+# TESTES
 
 [[exercises]]
 name = "tests1"
@@ -928,7 +928,7 @@ Leia:
 https://doc.rust-lang.org/book/ch11-01-writing-tests.html#checking-for-panics-with-should_panic
 """
 
-# STANDARD LIBRARY TYPES
+# TIPOS DA BIBLIOTECA PADRÃO
 
 [[exercises]]
 name = "iterators1"
@@ -1008,7 +1008,7 @@ Como desafio extra, procure outro método de `Iterator` que deixe a solução
 ainda mais compacta.
 """
 
-# SMART POINTERS
+# PONTEIROS INTELIGENTES
 
 [[exercises]]
 name = "smart_pointers1"
@@ -1210,7 +1210,7 @@ hint = """
 Sem dicas desta vez!
 """
 
-# TYPE CONVERSIONS
+# CONVERSÕES DE TIPOS
 
 [[exercises]]
 name = "conversions1"

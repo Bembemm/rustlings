@@ -4,19 +4,19 @@ mod delicious_snacks {
     pub use self::veggies::CUCUMBER as VEGGIE;
 
     mod fruits {
-        pub const PEAR: &str = "Pear";
-        pub const APPLE: &str = "Apple";
+        pub const PEAR: &str = "Pera";
+        pub const APPLE: &str = "Maçã";
     }
 
     mod veggies {
-        pub const CUCUMBER: &str = "Cucumber";
-        pub const CARROT: &str = "Carrot";
+        pub const CUCUMBER: &str = "Pepino";
+        pub const CARROT: &str = "Cenoura";
     }
 }
 
 fn main() {
     println!(
-        "favorite snacks: {} and {}",
+        "petiscos favoritos: {} e {}",
         delicious_snacks::FRUIT,
         delicious_snacks::VEGGIE,
     );

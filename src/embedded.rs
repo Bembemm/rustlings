@@ -168,7 +168,7 @@ mod tests {
     #[test]
     fn dirs() {
         let exercises = toml::de::from_str::<InfoFile>(EMBEDDED_FILES.info_file)
-            .expect("Failed to parse `info.toml`")
+            .expect("Falha ao interpretar `info.toml`")
             .exercises;
 
         assert_eq!(exercises.len(), EMBEDDED_FILES.exercise_files.len());

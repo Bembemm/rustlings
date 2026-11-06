@@ -13,23 +13,23 @@ fn string(arg: String) {
 // Substitua cada chamada a `placeholder(…)` por `string_slice(…)`
 // ou `string(…)`, de acordo com o tipo de cada valor.
 fn main() {
-    placeholder("blue");
+    placeholder("azul");
 
-    placeholder("red".to_string());
+    placeholder("vermelho".to_string());
 
-    placeholder(String::from("hi"));
+    placeholder(String::from("oi"));
 
-    placeholder("rust is fun!".to_owned());
+    placeholder("rust é divertido!".to_owned());
 
-    placeholder(format!("Interpolation {}", "Station"));
+    placeholder(format!("Interpolação {}", "Estação"));
 
     // ATENÇÃO: Este índice é baseado em bytes, não em caracteres.
     // Para acessar caracteres, você pode usar `s.chars().nth(INDEX)`.
     placeholder(&String::from("abc")[0..1]);
 
-    placeholder("  hello there ".trim());
+    placeholder("  olá ".trim());
 
-    placeholder("Happy Monday!".replace("Mon", "Tues"));
+    placeholder("Feliz segunda-feira!".replace("segunda", "terça"));
 
-    placeholder("mY sHiFt KeY iS sTiCkY".to_lowercase());
+    placeholder("mInHa TeClA sHiFt EsTá PrEsA".to_lowercase());
 }

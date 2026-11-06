@@ -1,15 +1,15 @@
 fn is_a_color_word(attempt: &str) -> bool {
-    attempt == "green" || attempt == "blue" || attempt == "red"
+    attempt == "verde" || attempt == "azul" || attempt == "vermelho"
 }
 
 fn main() {
-    let word = String::from("green");
+    let word = String::from("verde");
 
     if is_a_color_word(&word) {
         //             ^ adicionado para obter `&String`, que é automaticamente
         //               convertido por coerção para `&str` pelo compilador.
-        println!("That is a color word I know!");
+        println!("Essa é uma cor que eu conheço!");
     } else {
-        println!("That is not a color word I know.");
+        println!("Essa não é uma cor que eu conheço.");
     }
 }

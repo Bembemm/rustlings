@@ -13,5 +13,5 @@ fn sale_price(price: i64) -> i64 {
 
 fn main() {
     let original_price = 51;
-    println!("Your sale price is {}", sale_price(original_price));
+    println!("O preço com desconto é {}", sale_price(original_price));
 }

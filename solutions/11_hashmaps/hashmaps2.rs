@@ -88,7 +88,7 @@ mod tests {
 
         for fruit_kind in fruit_kinds {
             let Some(amount) = basket.get(&fruit_kind) else {
-                panic!("Fruit kind {fruit_kind:?} was not found in basket");
+                panic!("A fruta do tipo {fruit_kind:?} não foi encontrada na cesta");
             };
             assert!(*amount > 0);
         }

@@ -2,7 +2,7 @@
 // Foi adicionada a anotação de tipo `u64`.
 fn call_me(num: u64) {
     for i in 0..num {
-        println!("Ring! Call number {}", i + 1);
+        println!("Trim! Chamada número {}", i + 1);
     }
 }
 

@@ -36,6 +36,6 @@ fn main() {
         handle.join().unwrap();
     }
 
-    println!("Jobs done: {}", status.lock().unwrap().jobs_done);
+    println!("Trabalhos concluídos: {}", status.lock().unwrap().jobs_done);
     //                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 }

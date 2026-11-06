@@ -4,5 +4,5 @@ fn main() {
     // Desestruturando a tupla.
     let (name, age) = cat;
 
-    println!("{name} is {age} years old");
+    println!("{name} tem {age} anos");
 }

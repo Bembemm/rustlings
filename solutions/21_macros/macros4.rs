@@ -2,10 +2,10 @@
 #[rustfmt::skip]
 macro_rules! my_macro {
     () => {
-        println!("Check out my macro!");
+        println!("Veja minha macro!");
     };
     ($val:expr) => {
-        println!("Look at this other macro: {}", $val);
+        println!("Veja esta outra macro: {}", $val);
     };
 }
 

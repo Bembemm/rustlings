@@ -2,7 +2,7 @@
 mod sausage_factory {
     // Não permita que ninguém de fora deste módulo veja isto!
     fn get_secret_recipe() -> String {
-        String::from("Ginger")
+        String::from("Gengibre")
     }
 
     fn make_sausage() {

@@ -14,5 +14,5 @@ fn main() {
         title: "1984",
     };
 
-    println!("{} by {}", book.title, book.author);
+    println!("{} por {}", book.title, book.author);
 }

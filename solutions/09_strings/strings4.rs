@@ -7,23 +7,23 @@ fn string(arg: String) {
 }
 
 fn main() {
-    string_slice("blue");
+    string_slice("azul");
 
-    string("red".to_string());
+    string("vermelho".to_string());
 
-    string(String::from("hi"));
+    string(String::from("oi"));
 
-    string("rust is fun!".to_owned());
+    string("rust é divertido!".to_owned());
 
-    string(format!("Interpolation {}", "Station"));
+    string(format!("Interpolação {}", "Estação"));
 
     // ATENÇÃO: esta indexação é por bytes, não por caracteres.
     // Para acessar caracteres, você pode usar `s.chars().nth(INDEX)`.
     string_slice(&String::from("abc")[0..1]);
 
-    string_slice("  hello there ".trim());
+    string_slice("  olá ".trim());
 
-    string("Happy Monday!".replace("Mon", "Tues"));
+    string("Feliz segunda-feira!".replace("segunda", "terça"));
 
-    string("mY sHiFt KeY iS sTiCkY".to_lowercase());
+    string("mInHa TeClA sHiFt EsTá PrEsA".to_lowercase());
 }
