@@ -1,32 +1,32 @@
-// Structs contain data, but can also have logic. In this exercise, we have
-// defined the `Fireworks` struct and a couple of functions that work with it.
-// Turn these free-standing functions into methods and associated functions
-// to express that relationship more clearly in the code.
+// As estruturas armazenam dados, mas também podem ter comportamentos.
+// Neste exercício, definimos a estrutura `Fireworks` e algumas funções
+// que trabalham com ela. Transforme essas funções independentes em métodos
+// e funções associadas para deixar essa relação mais clara no código.
 
-#![deny(clippy::use_self)] // practice using the `Self` type
+#![deny(clippy::use_self)] // pratique o uso do tipo `Self`
 
 #[derive(Debug)]
 struct Fireworks {
     rockets: usize,
 }
 
-// TODO: Turn this function into an associated function on `Fireworks`.
+// TODO: Transforme esta função em uma função associada a `Fireworks`.
 fn new_fireworks() -> Fireworks {
     Fireworks { rockets: 0 }
 }
 
-// TODO: Turn this function into a method on `Fireworks`.
+// TODO: Transforme esta função em um método de `Fireworks`.
 fn add_rockets(fireworks: &mut Fireworks, rockets: usize) {
     fireworks.rockets += rockets
 }
 
-// TODO: Turn this function into a method on `Fireworks`.
+// TODO: Transforme esta função em um método de `Fireworks`.
 fn start(fireworks: Fireworks) -> String {
     "🚀".repeat(fireworks.rockets)
 }
 
 fn main() {
-    // You can optionally experiment here.
+    // Se quiser, você pode fazer experimentos aqui.
 }
 
 #[cfg(test)]
@@ -44,8 +44,8 @@ mod tests {
 
         let mut f = Fireworks::new();
         f.add_rockets(7);
-        // We don't use method syntax in the last test to ensure the `start`
-        // function takes ownership of the fireworks.
+        // No último teste, não usamos a sintaxe de método para garantir
+        // que a função `start` assuma a propriedade do valor de fogos de artifício.
         assert_eq!(Fireworks::start(f), "🚀🚀🚀🚀🚀🚀🚀");
     }
 }

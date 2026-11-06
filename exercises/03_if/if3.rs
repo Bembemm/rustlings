@@ -1,5 +1,5 @@
 fn animal_habitat(animal: &str) -> &str {
-    // TODO: Fix the compiler error in the statement below.
+    // TODO: Corrija o erro de compilação na instrução abaixo.
     let identifier = if animal == "crab" {
         1
     } else if animal == "gopher" {
@@ -10,7 +10,7 @@ fn animal_habitat(animal: &str) -> &str {
         "Unknown"
     };
 
-    // Don't change the expression below!
+    // Não altere a expressão abaixo!
     if identifier == 1 {
         "Beach"
     } else if identifier == 2 {
@@ -23,10 +23,10 @@ fn animal_habitat(animal: &str) -> &str {
 }
 
 fn main() {
-    // You can optionally experiment here.
+    // Se quiser, você pode fazer experimentos aqui.
 }
 
-// Don't change the tests!
+// Não altere os testes!
 #[cfg(test)]
 mod tests {
     use super::*;

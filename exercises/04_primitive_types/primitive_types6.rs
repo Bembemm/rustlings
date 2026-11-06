@@ -1,5 +1,5 @@
 fn main() {
-    // You can optionally experiment here.
+    // Se quiser, você pode fazer experimentos aqui.
 }
 
 #[cfg(test)]
@@ -8,10 +8,10 @@ mod tests {
     fn indexing_tuple() {
         let numbers = (1, 2, 3);
 
-        // TODO: Use a tuple index to access the second element of `numbers`
-        // and assign it to a variable called `second`.
+        // TODO: Use o índice da tupla para acessar o segundo elemento de `numbers`
+        // e atribuí-lo a uma variável chamada `second`.
         // let second = ???;
 
-        assert_eq!(second, 2, "This is not the 2nd number in the tuple!");
+        assert_eq!(second, 2, "Este não é o segundo número da tupla!");
     }
 }

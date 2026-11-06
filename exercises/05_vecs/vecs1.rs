@@ -1,10 +1,10 @@
 fn elems_to_vec(a: i32, b: i32, c: i32) -> Vec<i32> {
-    // TODO: Return a vector containing the elements a, b and c (in this order).
-    // Use the "vec!" macro.
+    // TODO: Retorne um vetor contendo os elementos a, b e c (nessa ordem).
+    // Utilize a macro `vec!`.
 }
 
 fn main() {
-    // You can optionally experiment here.
+    // Se quiser, você pode fazer experimentos aqui.
 }
 
 #[cfg(test)]

@@ -1,15 +1,15 @@
 struct ColorRegularStruct {
-    // TODO: Add the fields that the test `regular_structs` expects.
-    // What types should the fields have? What are the minimum and maximum values for RGB colors?
+    // TODO: Adicione os campos esperados pelo teste `regular_structs`.
+    // Quais devem ser os tipos desses campos? Quais são os valores mínimo e máximo das cores RGB?
 }
 
-struct ColorTupleStruct(/* TODO: Add the fields that the test `tuple_structs` expects */);
+struct ColorTupleStruct(/* TODO: Adicione os campos esperados pelo teste `tuple_structs` */);
 
 #[derive(Debug)]
 struct UnitStruct;
 
 fn main() {
-    // You can optionally experiment here.
+    // Se quiser, você pode fazer experimentos aqui.
 }
 
 #[cfg(test)]
@@ -18,7 +18,7 @@ mod tests {
 
     #[test]
     fn regular_structs() {
-        // TODO: Instantiate a regular struct.
+        // TODO: Crie uma instância de uma estrutura com campos nomeados.
         // let green =
 
         assert_eq!(green.red, 0);
@@ -28,7 +28,7 @@ mod tests {
 
     #[test]
     fn tuple_structs() {
-        // TODO: Instantiate a tuple struct.
+        // TODO: Crie uma instância de uma estrutura em forma de tupla.
         // let green =
 
         assert_eq!(green.0, 0);
@@ -38,7 +38,7 @@ mod tests {
 
     #[test]
     fn unit_structs() {
-        // TODO: Instantiate a unit struct.
+        // TODO: Crie uma instância de uma estrutura unitária.
         // let unit_struct =
         let message = format!("{unit_struct:?}s are fun!");
 

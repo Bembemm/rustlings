@@ -1,7 +1,7 @@
-# If
+# Condicionais (`if`)
 
-`if`, the most basic (but still surprisingly versatile!) type of control flow, is what you'll learn here.
+Neste módulo, você aprenderá a usar `if`, uma das formas mais básicas — mas surpreendentemente versáteis! — de controlar o fluxo de execução do programa.
 
-## Further information
+## Para saber mais
 
-- [Control Flow - if expressions](https://doc.rust-lang.org/book/ch03-05-control-flow.html#if-expressions)
+- [Controle de fluxo — expressões `if`](https://doc.rust-lang.org/book/ch03-05-control-flow.html#if-expressions)

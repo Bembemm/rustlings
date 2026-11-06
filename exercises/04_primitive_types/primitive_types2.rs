@@ -1,28 +1,28 @@
-// Characters (`char`)
+// Caracteres (`char`)
 
 fn main() {
-    // Note the _single_ quotes, these are different from the double quotes
-    // you've been seeing around.
+    // Observe as aspas _simples_: elas são diferentes das aspas duplas
+    // que você viu nos exemplos anteriores.
     let my_first_initial = 'C';
     if my_first_initial.is_alphabetic() {
-        println!("Alphabetical!");
+        println!("É uma letra!");
     } else if my_first_initial.is_numeric() {
-        println!("Numerical!");
+        println!("É um número!");
     } else {
-        println!("Neither alphabetic nor numeric!");
+        println!("Não é letra nem número!");
     }
 
-    // TODO: Analogous to the example before, declare a variable called `your_character`
-    // below with your favorite character.
-    // Try a letter, try a digit (in single quotes), try a special character, try a character
-    // from a different language than your own, try an emoji 😉
+    // TODO: Seguindo o exemplo anterior, declare abaixo uma variável chamada
+    // `your_character` com seu caractere favorito.
+    // Experimente uma letra, um dígito (entre aspas simples), um símbolo,
+    // um caractere de outro idioma ou até um emoji 😉
     // let your_character = '';
 
     if your_character.is_alphabetic() {
-        println!("Alphabetical!");
+        println!("É uma letra!");
     } else if your_character.is_numeric() {
-        println!("Numerical!");
+        println!("É um número!");
     } else {
-        println!("Neither alphabetic nor numeric!");
+        println!("Não é letra nem número!");
     }
 }

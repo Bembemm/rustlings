@@ -11,9 +11,14 @@ O projeto original e seus autores mantêm os créditos; este fork preserva a [li
 | 00 — Introdução | Traduzido |
 | 01 — Variáveis | Traduzido |
 | 02 — Funções | Traduzido |
+| 03 — Condicionais | Traduzido |
+| 04 — Tipos primitivos | Traduzido |
+| 05 — Vetores | Traduzido |
+| 06 — Semântica de movimentação | Traduzido |
+| 07 — Estruturas | Traduzido |
 | Demais módulos, dicas e interface de terminal | Ainda em inglês |
 
-**Tradução em andamento.** Os erros intencionais dos exercícios foram preservados. Não traduzimos palavras-chave da linguagem, nomes de arquivos ou identificadores essenciais para resolver os desafios.
+**Tradução em andamento.** Os módulos 00 a 07 já têm comentários e documentação em português. As mensagens usadas como dados pelos testes foram mantidas em inglês para preservar os resultados esperados. Os erros intencionais dos exercícios foram preservados. Não traduzimos palavras-chave da linguagem, nomes de arquivos ou identificadores essenciais para resolver os desafios.
 
 ## Como começar
 

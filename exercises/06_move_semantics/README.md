@@ -1,10 +1,12 @@
-# Move Semantics
+# Semântica de movimentação (*move semantics*)
 
-These exercises are adapted from [pnkfelix](https://github.com/pnkfelix)'s [Rust Tutorial](https://pnkfelix.github.io/rust-examples-icfp2014/) -- Thank you Felix!!!
+Estes exercícios foram adaptados do [tutorial de Rust](https://pnkfelix.github.io/rust-examples-icfp2014/) de [pnkfelix](https://github.com/pnkfelix). Obrigado, Felix!
 
-## Further information
+Neste módulo, você verá como Rust controla a propriedade dos valores (*ownership*) e como referências permitem emprestá-los (*borrowing*) com segurança.
 
-For this section, the book links are especially important.
+## Para saber mais
 
-- [Ownership](https://doc.rust-lang.org/book/ch04-01-what-is-ownership.html)
-- [Reference and borrowing](https://doc.rust-lang.org/book/ch04-02-references-and-borrowing.html)
+Os capítulos do livro são especialmente importantes para esta seção.
+
+- [Propriedade (*ownership*)](https://doc.rust-lang.org/book/ch04-01-what-is-ownership.html)
+- [Referências e empréstimos (*borrowing*)](https://doc.rust-lang.org/book/ch04-02-references-and-borrowing.html)

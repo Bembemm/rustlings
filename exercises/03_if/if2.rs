@@ -1,4 +1,4 @@
-// TODO: Fix the compiler error on this function.
+// TODO: Corrija o erro de compilação nesta função.
 fn picky_eater(food: &str) -> &str {
     if food == "strawberry" {
         "Yummy!"
@@ -8,18 +8,18 @@ fn picky_eater(food: &str) -> &str {
 }
 
 fn main() {
-    // You can optionally experiment here.
+    // Se quiser, você pode fazer experimentos aqui.
 }
 
-// TODO: Read the tests to understand the desired behavior.
-// Make all tests pass without changing them.
+// TODO: Leia os testes para entender o comportamento esperado.
+// Faça todos os testes passarem sem modificá-los.
 #[cfg(test)]
 mod tests {
     use super::*;
 
     #[test]
     fn yummy_food() {
-        // This means that calling `picky_eater` with the argument "strawberry" should return "Yummy!".
+        // Isto significa que chamar `picky_eater` com o argumento "strawberry" deve retornar "Yummy!".
         assert_eq!(picky_eater("strawberry"), "Yummy!");
     }
 

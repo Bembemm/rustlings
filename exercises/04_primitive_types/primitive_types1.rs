@@ -1,15 +1,15 @@
-// Booleans (`bool`)
+// Valores booleanos (`bool`)
 
 fn main() {
     let is_morning = true;
     if is_morning {
-        println!("Good morning!");
+        println!("Bom dia!");
     }
 
-    // TODO: Define a boolean variable with the name `is_evening` before the `if` statement below.
-    // The value of the variable should be the negation (opposite) of `is_morning`.
+    // TODO: Declare uma variável booleana chamada `is_evening` antes do `if` abaixo.
+    // O valor dessa variável deve ser a negação (o oposto) de `is_morning`.
     // let …
     if is_evening {
-        println!("Good evening!");
+        println!("Boa noite!");
     }
 }

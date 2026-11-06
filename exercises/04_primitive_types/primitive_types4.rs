@@ -1,5 +1,5 @@
 fn main() {
-    // You can optionally experiment here.
+    // Se quiser, você pode fazer experimentos aqui.
 }
 
 #[cfg(test)]
@@ -8,7 +8,7 @@ mod tests {
     fn slice_out_of_array() {
         let a = [1, 2, 3, 4, 5];
 
-        // TODO: Get a slice called `nice_slice` out of the array `a` so that the test passes.
+        // TODO: Obtenha um slice chamado `nice_slice` a partir do array `a` para que o teste passe.
         // let nice_slice = ???
 
         assert_eq!([2, 3, 4], nice_slice);
