@@ -64,10 +64,10 @@ pub fn init() -> Result<()> {
         locate_project_output.stdout.pop();
 
         let workspace_manifest = String::try_from(locate_project_output.stdout)
-            .context("Failed to convert the output of `cargo locate-project …` to a string")?;
+            .context("Falha ao converter a saída de `cargo locate-project …` em uma string")?;
 
         let workspace_manifest_content = fs::read_to_string(&workspace_manifest)
-            .with_context(|| format!("Failed to read the file {workspace_manifest}"))?;
+            .with_context(|| format!("Falha ao ler o arquivo {workspace_manifest}"))?;
         if !workspace_manifest_content.contains("[workspace]")
             && !workspace_manifest_content.contains("workspace.")
         {
@@ -100,39 +100,39 @@ pub fn init() -> Result<()> {
 
         stdout.write_all("A pasta `rustlings` foi adicionada a `workspace.members` no `Cargo.toml` deste workspace.\n".as_bytes())?;
         fs::remove_dir_all(rustlings_dir)
-            .context("Failed to remove the temporary directory `rustlings/`")?;
+            .context("Falha ao remover o diretório temporário `rustlings/`")?;
         init_git = false;
     } else {
         stdout.write_all("Este comando criará a pasta `rustlings/`, que conterá os exercícios.\nPressione ENTER para continuar ".as_bytes())?;
         press_enter_prompt(&mut stdout)?;
     }
 
-    create_dir(rustlings_dir).context("Failed to create the `rustlings/` directory")?;
+    create_dir(rustlings_dir).context("Falha ao criar o diretório `rustlings/`")?;
     set_current_dir(rustlings_dir)
-        .context("Failed to change the current directory to `rustlings/`")?;
+        .context("Falha ao mudar o diretório atual para `rustlings/`")?;
 
     let info_file = InfoFile::parse()?;
     EMBEDDED_FILES
         .init_exercises_dir(&info_file.exercises)
-        .context("Failed to initialize the `rustlings/exercises` directory")?;
+        .context("Falha ao inicializar o diretório `rustlings/exercises`")?;
 
-    create_dir("solutions").context("Failed to create the `solutions/` directory")?;
+    create_dir("solutions").context("Falha ao criar o diretório `solutions/`")?;
     fs::write(
         "solutions/README.md",
         include_bytes!("../solutions/README.md"),
     )
-    .context("Failed to create the file rustlings/solutions/README.md")?;
+    .context("Falha ao criar o arquivo rustlings/solutions/README.md")?;
     for dir in EMBEDDED_FILES.exercise_dirs {
         let mut dir_path = String::with_capacity(10 + dir.name.len());
         dir_path.push_str("solutions/");
         dir_path.push_str(dir.name);
         create_dir(&dir_path)
-            .with_context(|| format!("Failed to create the directory {dir_path}"))?;
+            .with_context(|| format!("Falha ao criar o diretório {dir_path}"))?;
     }
     for exercise_info in &info_file.exercises {
         let solution_path = exercise_info.sol_path();
         fs::write(&solution_path, INIT_SOLUTION_FILE)
-            .with_context(|| format!("Failed to create the file {solution_path}"))?;
+            .with_context(|| format!("Falha ao criar o arquivo {solution_path}"))?;
     }
 
     let current_cargo_toml = include_str!("../dev-Cargo.toml");
@@ -141,26 +141,26 @@ pub fn init() -> Result<()> {
         .as_bytes()
         .iter()
         .position(|c| *c == b'\n')
-        .context("The embedded `Cargo.toml` is empty or contains only one line")?;
+        .context("O `Cargo.toml` incorporado está vazio ou contém apenas uma linha")?;
     let current_cargo_toml = current_cargo_toml
         .get(newline_ind + 1..)
-        .context("The embedded `Cargo.toml` contains only one line")?;
+        .context("O `Cargo.toml` incorporado contém apenas uma linha")?;
     let updated_cargo_toml = updated_cargo_toml(&info_file.exercises, current_cargo_toml, b"")
-        .context("Failed to generate `Cargo.toml`")?;
+        .context("Falha ao gerar `Cargo.toml`")?;
     fs::write("Cargo.toml", updated_cargo_toml)
-        .context("Failed to create the file `rustlings/Cargo.toml`")?;
+        .context("Falha ao criar o arquivo `rustlings/Cargo.toml`")?;
 
     fs::write("rust-analyzer.toml", RUST_ANALYZER_TOML)
-        .context("Failed to create the file `rustlings/rust-analyzer.toml`")?;
+        .context("Falha ao criar o arquivo `rustlings/rust-analyzer.toml`")?;
 
     fs::write(".gitignore", GITIGNORE)
-        .context("Failed to create the file `rustlings/.gitignore`")?;
+        .context("Falha ao criar o arquivo `rustlings/.gitignore`")?;
 
-    fs::write("README.md", README).context("Failed to create the file `rustlings/README.md`")?;
+    fs::write("README.md", README).context("Falha ao criar o arquivo `rustlings/README.md`")?;
 
-    create_dir(".vscode").context("Failed to create the directory `rustlings/.vscode`")?;
+    create_dir(".vscode").context("Falha ao criar o diretório `rustlings/.vscode`")?;
     fs::write(".vscode/extensions.json", VS_CODE_EXTENSIONS_JSON)
-        .context("Failed to create the file `rustlings/.vscode/extensions.json`")?;
+        .context("Falha ao criar o arquivo `rustlings/.vscode/extensions.json`")?;
 
     if init_git && let Ok(dir) = current_dir() {
         let mut dir = dir.as_path();

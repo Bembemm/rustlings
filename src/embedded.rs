@@ -31,7 +31,7 @@ fn create_dir_if_not_exists(path: &str) -> Result<()> {
     if let Err(e) = create_dir(path)
         && e.kind() != io::ErrorKind::AlreadyExists
     {
-        return Err(Error::from(e).context(format!("Failed to create the directory {path}")));
+        return Err(Error::from(e).context(format!("Falha ao criar o diretório {path}")));
     }
 
     Ok(())
@@ -56,7 +56,7 @@ impl ExerciseDir {
         readme_path.push_str("/README.md");
 
         fs::write(&readme_path, self.readme)
-            .with_context(|| format!("Failed to write the file {readme_path}"))
+            .with_context(|| format!("Falha ao gravar o arquivo {readme_path}"))
     }
 }
 
@@ -71,13 +71,13 @@ pub struct EmbeddedFiles {
 impl EmbeddedFiles {
     /// Dump all the embedded files of the `exercises/` directory.
     pub fn init_exercises_dir(&self, exercise_infos: &[ExerciseInfo]) -> Result<()> {
-        create_dir("exercises").context("Failed to create the directory `exercises`")?;
+        create_dir("exercises").context("Falha ao criar o diretório `exercises`")?;
 
         fs::write(
             "exercises/README.md",
             include_bytes!("../exercises/README.md"),
         )
-        .context("Failed to write the file exercises/README.md")?;
+        .context("Falha ao gravar o arquivo exercises/README.md")?;
 
         for dir in self.exercise_dirs {
             dir.init_on_disk()?;
@@ -97,12 +97,12 @@ impl EmbeddedFiles {
             exercise_path.push_str(".rs");
 
             fs::write(&exercise_path, exercise_files.exercise)
-                .with_context(|| format!("Failed to write the exercise file {exercise_path}"))?;
+                .with_context(|| format!("Falha ao gravar o arquivo do exercício {exercise_path}"))?;
 
             for InputFile { name, content } in exercise_files.input_files {
                 let path = format!("{prefix}/{dir_name}/{name}", dir_name = dir.name);
                 fs::write(&path, content)
-                    .with_context(|| format!("Failed to write the input file {path}"))?;
+                    .with_context(|| format!("Falha ao gravar o arquivo de entrada {path}"))?;
             }
         }
 
@@ -115,7 +115,7 @@ impl EmbeddedFiles {
 
         dir.init_on_disk()?;
         fs::write(path, exercise_files.exercise)
-            .with_context(|| format!("Failed to write the exercise file {path}"))
+            .with_context(|| format!("Falha ao gravar o arquivo do exercício {path}"))
     }
 
     /// Write the solution file to disk and return its path.
@@ -142,7 +142,7 @@ impl EmbeddedFiles {
         solution_path.push_str(".rs");
 
         fs::write(&solution_path, exercise_files.solution)
-            .with_context(|| format!("Failed to write the solution file {solution_path}"))?;
+            .with_context(|| format!("Falha ao gravar o arquivo de solução {solution_path}"))?;
 
         Ok(solution_path)
     }

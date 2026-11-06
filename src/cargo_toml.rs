@@ -13,13 +13,13 @@ pub const BINS_BUFFER_CAPACITY: usize = 1 << 14;
 pub fn bins_start_end_ind(cargo_toml: &str) -> Result<(usize, usize)> {
     let start_ind = cargo_toml
         .find("bin = [")
-        .context("Failed to find the start of the `bin` list (`bin = [`)")?
+        .context("Falha ao localizar o início da lista `bin` (`bin = [`)")?
         + 7;
     let end_ind = start_ind
         + cargo_toml
             .get(start_ind..)
             .and_then(|slice| slice.as_bytes().iter().position(|c| *c == b']'))
-            .context("Failed to find the end of the `bin` list (`]`)")?;
+            .context("Falha ao localizar o fim da lista `bin` (`]`)")?;
 
     Ok((start_ind, end_ind))
 }

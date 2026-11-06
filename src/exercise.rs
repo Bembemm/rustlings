@@ -125,7 +125,7 @@ pub trait RunnableExercise {
                 Some(dir) => format!("exercises/{dir}/{name}"),
                 None => format!("exercises/{name}"),
             };
-            std::fs::write(path, input_file.content).context("failed to write input file")?;
+            std::fs::write(path, input_file.content).context("falha ao gravar o arquivo de entrada")?;
         }
 
         let build_success = cmd_runner

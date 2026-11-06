@@ -58,7 +58,7 @@ impl NotifyEventHandler {
                     }
                 }
             })
-            .context("Failed to spawn a thread to debounce file changes")?;
+            .context("Falha ao criar uma thread para agrupar alterações de arquivos")?;
 
         Ok(Self {
             error_sender,

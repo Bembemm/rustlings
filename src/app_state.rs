@@ -77,7 +77,7 @@ impl AppState {
             .truncate(false)
             .open(STATE_FILE_NAME)
             .with_context(|| {
-                format!("Failed to open or create the state file {STATE_FILE_NAME}")
+                format!("Falha ao abrir ou criar o arquivo de estado {STATE_FILE_NAME}")
             })?;
 
         let dir_canonical_path = term::canonicalize("exercises");
@@ -243,13 +243,13 @@ impl AppState {
 
         self.state_file
             .rewind()
-            .with_context(|| format!("Failed to rewind the state file {STATE_FILE_NAME}"))?;
+            .with_context(|| format!("Falha ao reposicionar o arquivo de estado {STATE_FILE_NAME}"))?;
         self.state_file
             .set_len(0)
-            .with_context(|| format!("Failed to truncate the state file {STATE_FILE_NAME}"))?;
+            .with_context(|| format!("Falha ao truncar o arquivo de estado {STATE_FILE_NAME}"))?;
         self.state_file
             .write_all(&self.file_buf)
-            .with_context(|| format!("Failed to write the state file {STATE_FILE_NAME}"))?;
+            .with_context(|| format!("Falha ao gravar o arquivo de estado {STATE_FILE_NAME}"))?;
 
         Ok(())
     }
@@ -275,7 +275,7 @@ impl AppState {
             .exercises
             .iter()
             .position(|exercise| exercise.name == name)
-            .with_context(|| format!("No exercise found for '{name}'!"))?;
+            .with_context(|| format!("Nenhum exercício encontrado com o nome '{name}'!"))?;
 
         self.write()
     }
@@ -317,7 +317,7 @@ impl AppState {
         if self.official_exercises {
             return EMBEDDED_FILES
                 .write_exercise_to_disk(exercise_ind, path)
-                .with_context(|| format!("Failed to reset the exercise {path}"));
+                .with_context(|| format!("Falha ao restaurar o exercício {path}"));
         }
 
         let output = Command::new("git")
@@ -328,11 +328,11 @@ impl AppState {
             .stdin(Stdio::null())
             .stdout(Stdio::null())
             .output()
-            .with_context(|| format!("Failed to run `git stash push -- {path}`"))?;
+            .with_context(|| format!("Falha ao executar `git stash push -- {path}`"))?;
 
         if !output.status.success() {
             bail!(
-                "`git stash push -- {path}` didn't run successfully: {}",
+                "`git stash push -- {path}` não foi executado com sucesso: {}",
                 String::from_utf8_lossy(&output.stderr),
             );
         }
@@ -439,7 +439,7 @@ impl AppState {
                             }
                         }
                     })
-                    .context("Failed to spawn a thread to check all exercises")?;
+                    .context("Falha ao criar uma thread para verificar todos os exercícios")?;
             }
 
             // Drop this sender to detect when the last thread is done.
@@ -574,7 +574,7 @@ impl AppState {
 }
 
 const BAD_INDEX_ERR: &str = "O índice do exercício atual é maior que a quantidade de exercícios";
-const STATE_FILE_HEADER: &[u8] = b"DON'T EDIT THIS FILE!\n\n";
+const STATE_FILE_HEADER: &[u8] = b"NAO EDITE ESTE ARQUIVO!\n\n";
 const FINISH_LINE: &str = "+----------------------------------------------------+
 |              Você chegou ao final!                 |
 +--------------------------  ------------------------+
