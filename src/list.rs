@@ -24,7 +24,7 @@ fn handle_list(app_state: &mut AppState, stdout: &mut StdoutLock) -> Result<()> 
     let mut is_searching = false;
 
     loop {
-        match event::read().context("Failed to read terminal event")? {
+        match event::read().context("Falha ao ler evento do terminal")? {
             Event::Key(key) => {
                 match key.kind {
                     KeyEventKind::Release => continue,
@@ -63,22 +63,22 @@ fn handle_list(app_state: &mut AppState, stdout: &mut StdoutLock) -> Result<()> 
                     KeyCode::Char('d') => {
                         if list_state.filter() == Filter::Done {
                             list_state.set_filter(Filter::None);
-                            list_state.message.push_str("Disabled filter DONE");
+                            list_state.message.push_str("Filtro CONCLUÍDOS desativado");
                         } else {
                             list_state.set_filter(Filter::Done);
                             list_state.message.push_str(
-                                "Enabled filter DONE │ Press d again to disable the filter",
+                                "Filtro CONCLUÍDOS ativado │ Pressione d novamente para desativar",
                             );
                         }
                     }
                     KeyCode::Char('p') => {
                         if list_state.filter() == Filter::Pending {
                             list_state.set_filter(Filter::None);
-                            list_state.message.push_str("Disabled filter PENDING");
+                            list_state.message.push_str("Filtro PENDENTES desativado");
                         } else {
                             list_state.set_filter(Filter::Pending);
                             list_state.message.push_str(
-                                "Enabled filter PENDING │ Press p again to disable the filter",
+                                "Filtro PENDENTES ativado │ Pressione p novamente para desativar",
                             );
                         }
                     }
