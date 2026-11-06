@@ -247,14 +247,14 @@ impl<'a> ListState<'a> {
                     hotkey(&mut writer, b"G")?;
                     writer.write_str(" | ↩️/")?;
                     hotkey(&mut writer, b"c")?;
-                    writer.write_str("ontinuar em | ")?;
+                    writer.write_str(": continuar em | ")?;
                     hotkey(&mut writer, b"r")?;
-                    writer.write_str("estaurar exercício")?;
+                    writer.write_str(": restaurar exercício")?;
                     next_ln(stdout)?;
                     writer = MaxLenWriter::new(stdout, self.term_width as usize);
 
                     hotkey(&mut writer, b"s")?;
-                    writer.write_str("uscar | filtro ")?;
+                    writer.write_str(": buscar | filtro ")?;
                 } else {
                     // Nothing selected (and nothing shown), so only display filter and quit.
                     writer.write_str("filtro ")?;
@@ -268,35 +268,35 @@ impl<'a> ListState<'a> {
                             .stdout
                             .queue(SetForegroundColor(Color::Magenta))?
                             .queue(SetAttribute(Attribute::Underlined))?;
-                        writer.write_str("oncluídos")?;
+                        writer.write_str(": concluídos")?;
                         writer.stdout.queue(ResetColor)?;
                         writer.write_ascii(b"/")?;
                         hotkey(&mut writer, b"p")?;
-                        writer.write_str("endentes")?;
+                        writer.write_str(": pendentes")?;
                     }
                     Filter::Pending => {
                         hotkey(&mut writer, b"d")?;
-                        writer.write_str("oncluídos/")?;
+                        writer.write_str(": concluídos/")?;
                         writer.stdout.queue(SetAttribute(Attribute::Underlined))?;
                         hotkey(&mut writer, b"p")?;
                         writer
                             .stdout
                             .queue(SetForegroundColor(Color::Magenta))?
                             .queue(SetAttribute(Attribute::Underlined))?;
-                        writer.write_str("endentes")?;
+                        writer.write_str(": pendentes")?;
                         writer.stdout.queue(ResetColor)?;
                     }
                     Filter::None => {
                         hotkey(&mut writer, b"d")?;
-                        writer.write_str("oncluídos/")?;
+                        writer.write_str(": concluídos/")?;
                         hotkey(&mut writer, b"p")?;
-                        writer.write_str("endentes")?;
+                        writer.write_str(": pendentes")?;
                     }
                 }
 
                 writer.write_ascii(b" | ")?;
                 hotkey(&mut writer, b"q")?;
-                writer.write_str("air da lista")?;
+                writer.write_str(": sair da lista")?;
             } else {
                 writer.stdout.queue(SetForegroundColor(Color::Magenta))?;
                 writer.write_str(&self.message)?;
