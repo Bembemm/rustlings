@@ -23,12 +23,12 @@ fn run_cmd(
         // The closure drops `cmd` which prevents a pipe deadlock.
         cmd.stdin(Stdio::null())
             .spawn()
-            .with_context(|| format!("Failed to run `{description}`"))
+            .with_context(|| format!("Falha ao executar `{description}`"))
     };
     let wait = |handle: &mut Child| {
         handle
             .wait_timeout(Duration::from_secs(TIMEOUT_SECS))
-            .with_context(|| format!("Failed to wait on `{description}` to exit"))
+            .with_context(|| format!("Falha ao aguardar o término de `{description}`"))
     };
     if let Some(cwd) = cwd {
         cmd.current_dir(cwd);
@@ -36,11 +36,11 @@ fn run_cmd(
 
     let mut handle = if let Some(output) = output {
         let (mut reader, writer) =
-            pipe().with_context(|| format!("Failed to create a pipe to run `{description}``"))?;
+            pipe().with_context(|| format!("Falha ao criar um pipe para executar `{description}``"))?;
 
         let writer_clone = writer
             .try_clone()
-            .with_context(|| format!("Failed to clone the pipe writer for `{description}`"))?;
+            .with_context(|| format!("Falha ao clonar o writer do pipe para `{description}`"))?;
 
         cmd.stdout(writer_clone).stderr(writer);
         let mut handle = spawn(cmd)?;
@@ -50,13 +50,13 @@ fn run_cmd(
                 let mut out = Vec::with_capacity(128);
                 reader.read_to_end(&mut out).map(|_| out)
             })
-            .context("Failed to spawn a thread to collect a command's output")?;
+            .context("Falha ao criar uma thread para coletar a saída do comando")?;
 
         if let Some(status) = wait(&mut handle)? {
             let out = thread_handle
                 .join()
                 .unwrap()
-                .with_context(|| format!("Failed to read the output of `{description}`"))?;
+                .with_context(|| format!("Falha ao ler a saída de `{description}`"))?;
             output.extend_from_slice(&out);
             output.push(b'\n');
             return Ok(status.success());
@@ -76,8 +76,8 @@ fn run_cmd(
 
     handle
         .kill()
-        .with_context(|| format!("Failed to kill `{description}` after timeout"))?;
-    bail!("`{description}` timed out after {TIMEOUT_SECS} seconds");
+        .with_context(|| format!("Falha ao encerrar `{description}` após o tempo limite"))?;
+    bail!("`{description}` excedeu o tempo limite de {TIMEOUT_SECS} segundos");
 }
 
 // Parses parts of the output of `cargo metadata`.
@@ -105,11 +105,11 @@ impl CmdRunner {
             .context(CARGO_METADATA_ERR)?;
 
         if !metadata_output.status.success() {
-            bail!("`cargo metadata …` failed. Are you in the `rustlings/` directory?");
+            bail!("`cargo metadata …` falhou. Você está no diretório `rustlings/`?");
         }
 
         let metadata: CargoMetadata = serde_json::de::from_slice(&metadata_output.stdout).context(
-            "Failed to read the field `target_directory` from the output of `cargo metadata …`",
+            "Falha ao ler o campo `target_directory` da saída de `cargo metadata …`",
         )?;
 
         Ok(Self {
@@ -178,9 +178,7 @@ impl CargoSubcommand<'_> {
     }
 }
 
-const CARGO_METADATA_ERR: &str = "Failed to run `cargo metadata …`
-Did you already install Rust?
-Try running `cargo --version` to diagnose the problem.";
+const CARGO_METADATA_ERR: &str = "Falha ao executar `cargo metadata …`\nO Rust já está instalado?\nExecute `cargo --version` para diagnosticar o problema.";
 
 #[cfg(test)]
 mod tests {
