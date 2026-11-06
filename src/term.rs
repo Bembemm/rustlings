@@ -87,7 +87,7 @@ pub struct ProgressCounter<'a, 'lock> {
 
 impl<'a, 'lock> ProgressCounter<'a, 'lock> {
     pub fn new(stdout: &'a mut StdoutLock<'lock>, total: usize) -> io::Result<Self> {
-        write!(stdout, "Progress: 0/{total}")?;
+        write!(stdout, "Progresso: 0/{total}")?;
         stdout.flush()?;
 
         Ok(Self {
@@ -99,7 +99,7 @@ impl<'a, 'lock> ProgressCounter<'a, 'lock> {
 
     pub fn increment(&mut self) -> io::Result<()> {
         self.counter += 1;
-        write!(self.stdout, "\rProgress: {}/{}", self.counter, self.total)?;
+        write!(self.stdout, "\rProgresso: {}/{}", self.counter, self.total)?;
         self.stdout.flush()
     }
 }
@@ -115,7 +115,7 @@ pub struct CheckProgressVisualizer<'a, 'lock>(ProgressCounter<'a, 'lock>);
 impl<'a, 'lock> CheckProgressVisualizer<'a, 'lock> {
     pub fn build(stdout: &'a mut StdoutLock<'lock>, total: usize) -> io::Result<Self> {
         clear_terminal(stdout)?;
-        stdout.write_all("Checking all exercises…\n".as_bytes())?;
+        stdout.write_all("Verificando todos os exercícios…\n".as_bytes())?;
 
         Ok(Self(ProgressCounter::new(stdout, total)?))
     }
@@ -131,13 +131,13 @@ impl<'a, 'lock> CheckProgressVisualizer<'a, 'lock> {
 
     pub fn done(&mut self, exercise_name: &str) -> io::Result<()> {
         self.0.stdout.queue(SetForegroundColor(Color::Green))?;
-        self.0.stdout.write_all(b"\r   DONE ")?;
+        self.0.stdout.write_all("\rCONCLUÍDO ".as_bytes())?;
         self.checked(exercise_name)
     }
 
     pub fn pending(&mut self, exercise_name: &str) -> io::Result<()> {
         self.0.stdout.queue(SetForegroundColor(Color::Red))?;
-        self.0.stdout.write_all(b"\rPENDING ")?;
+        self.0.stdout.write_all(b"\rPENDENTE ")?;
         self.checked(exercise_name)
     }
 }
@@ -148,7 +148,7 @@ pub fn progress_bar<'a>(
     total: u32,
     term_width: u16,
 ) -> io::Result<()> {
-    const PREFIX: &[u8] = b"Progress: [";
+    const PREFIX: &[u8] = b"Progresso: [";
     const PREFIX_WIDTH: u16 = PREFIX.len() as u16;
     const POSTFIX_WIDTH: u16 = "] xxx/xxx".len() as u16;
     const WRAPPER_WIDTH: u16 = PREFIX_WIDTH + POSTFIX_WIDTH;
@@ -158,7 +158,7 @@ pub fn progress_bar<'a>(
     debug_assert!(progress <= total);
 
     if term_width < MIN_LINE_WIDTH {
-        writer.write_ascii(b"Progress: ")?;
+        writer.write_ascii(b"Progresso: ")?;
         // Integers are in ASCII.
         return writer.write_ascii(format!("{progress}/{total}").as_bytes());
     }
