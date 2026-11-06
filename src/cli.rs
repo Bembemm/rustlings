@@ -2,56 +2,56 @@ use clap::{Parser, Subcommand};
 
 use crate::dev::DevCommand;
 
-/// Rustlings is a collection of small exercises to get you used to writing and reading Rust code
+/// Rustlings é uma coleção de pequenos exercícios para praticar leitura e escrita de código Rust
 #[derive(Parser)]
 #[command(version)]
 pub struct Args {
     #[command(subcommand)]
     pub command: Option<Command>,
-    /// Disable automatic opening of the current file in VS Code or Zellij.
-    /// Ignores `--edit-cmd`
+    /// Desativa a abertura automática do exercício atual no VS Code ou Zellij.
+    /// Ignora `--edit-cmd`
     #[arg(long)]
     pub no_editor: bool,
-    /// Open the current exercise by running `EDIT_CMD EXERCISE_PATH`.
-    /// The command is not allowed to block (e.g. `vim`).
-    /// It should communicate with an editor in a different process.
-    /// `EDIT_CMD` can contain arguments like `--edit-cmd "PROGRAM -x --arg1"`.
-    /// The current exercise's path is added by Rustlings as the last argument.
-    /// `--edit-cmd` is ignored in VS Code.
+    /// Abre o exercício atual executando `EDIT_CMD EXERCISE_PATH`.
+    /// O comando não pode bloquear o processo (por exemplo, `vim`).
+    /// Ele deve se comunicar com um editor executado em outro processo.
+    /// `EDIT_CMD` pode conter argumentos, como `--edit-cmd "PROGRAM -x --arg1"`.
+    /// O caminho do exercício atual é acrescentado pelo Rustlings como último argumento.
+    /// `--edit-cmd` é ignorado no VS Code.
     ///
-    /// Example: `--edit-cmd "code"` (default behavior if running in a VS Code terminal)
+    /// Exemplo: `--edit-cmd "code"` (comportamento padrão em um terminal do VS Code)
     #[arg(long)]
     pub edit_cmd: Option<String>,
-    /// Manually run the current exercise using `r` in the watch mode.
-    /// Only use this if Rustlings fails to detect exercise file changes
+    /// Executa manualmente o exercício atual com `r` no modo de acompanhamento.
+    /// Use apenas se o Rustlings não conseguir detectar alterações nos arquivos
     #[arg(long)]
     pub manual_run: bool,
 }
 
 #[derive(Subcommand)]
 pub enum Command {
-    /// Initialize the official Rustlings exercises
+    /// Inicializa os exercícios oficiais do Rustlings
     Init,
-    /// Run a single exercise.
-    /// Runs the next pending exercise if the exercise name is not specified
+    /// Executa um único exercício.
+    /// Se nenhum nome for informado, executa o próximo exercício pendente
     Run {
-        /// The name of the exercise
+        /// Nome do exercício
         name: Option<String>,
     },
-    /// Check all the exercises, marking them as done or pending accordingly
+    /// Verifica todos os exercícios e os marca como concluídos ou pendentes
     CheckAll,
-    /// Reset a single exercise
+    /// Restaura um único exercício
     Reset {
-        /// The name of the exercise
+        /// Nome do exercício
         name: String,
     },
-    /// Show a hint.
-    /// Shows the hint of the next pending exercise if the exercise name is not specified
+    /// Exibe uma dica.
+    /// Se nenhum nome for informado, mostra a dica do próximo exercício pendente
     Hint {
-        /// The name of the exercise
+        /// Nome do exercício
         name: Option<String>,
     },
-    /// Commands for developing (community) Rustlings exercises
+    /// Comandos para desenvolver exercícios comunitários do Rustlings
     #[command(subcommand)]
     Dev(DevCommand),
 }
