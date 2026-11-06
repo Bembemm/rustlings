@@ -1,22 +1,16 @@
 # Lifetimes
 
-Lifetimes tell the compiler how to check whether references live long
-enough to be valid in any given situation. For example lifetimes say
-"make sure parameter 'a' lives as long as parameter 'b' so that the return
-value is valid".
+*Lifetimes* ajudam o compilador a verificar se referências continuam válidas pelo tempo necessário.
 
-They are only necessary on borrows, i.e. references,
-since copied parameters or moves are owned in their scope and cannot
-be referenced outside. Lifetimes mean that calling code of e.g. functions
-can be checked to make sure their arguments are valid. Lifetimes are
-restrictive of their callers.
+Por exemplo, uma anotação de lifetime pode expressar algo como: "garanta que a referência `'a` permaneça válida por tempo suficiente para que o valor retornado continue seguro".
 
-If you'd like to learn more about lifetime annotations, the
-[lifetimekata](https://tfpk.github.io/lifetimekata/) project
-has a similar style of exercises to Rustlings, but is all about
-learning to write lifetime annotations.
+Lifetimes são relevantes para empréstimos, isto é, referências. Valores copiados ou movidos passam a pertencer ao novo escopo e seguem regras diferentes.
 
-## Further information
+As anotações de lifetime permitem ao compilador verificar se os argumentos usados por uma função permanecem válidos durante o uso das referências retornadas.
 
-- [Lifetimes (in Rust By Example)](https://doc.rust-lang.org/stable/rust-by-example/scope/lifetime.html)
-- [Validating References with Lifetimes](https://doc.rust-lang.org/book/ch10-03-lifetime-syntax.html)
+Se quiser praticar ainda mais, o projeto [lifetimekata](https://tfpk.github.io/lifetimekata/) possui exercícios no estilo do Rustlings focados especificamente em lifetimes.
+
+## Para saber mais
+
+- [Lifetimes no Rust By Example](https://doc.rust-lang.org/stable/rust-by-example/scope/lifetime.html)
+- [Validando referências com lifetimes](https://doc.rust-lang.org/book/ch10-03-lifetime-syntax.html)

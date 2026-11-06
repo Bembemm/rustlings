@@ -2,9 +2,9 @@ fn main() {
     my_macro!();
 }
 
-// TODO: Fix the compiler error by moving the whole definition of this macro.
+// TODO: Corrija o erro de compilação movendo a definição inteira desta macro.
 macro_rules! my_macro {
     () => {
-        println!("Check out my macro!");
+        println!("Veja minha macro!");
     };
 }

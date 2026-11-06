@@ -1,6 +1,6 @@
-// Lifetimes are also needed when structs hold references.
+// Lifetimes também são necessários quando structs armazenam referências.
 
-// TODO: Fix the compiler errors about the struct.
+// TODO: Corrija os erros de compilação relacionados à struct.
 struct Book {
     author: &str,
     title: &str,
@@ -12,5 +12,5 @@ fn main() {
         title: "1984",
     };
 
-    println!("{} by {}", book.title, book.author);
+    println!("{} por {}", book.title, book.author);
 }

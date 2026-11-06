@@ -1,8 +1,7 @@
-// `TryFrom` is a simple and safe type conversion that may fail in a controlled
-// way under some circumstances. Basically, this is the same as `From`. The main
-// difference is that this should return a `Result` type instead of the target
-// type itself. You can read more about it in the documentation:
-// https://doc.rust-lang.org/std/convert/trait.TryFrom.html
+// `TryFrom` representa uma conversão de tipos que pode falhar de maneira
+// controlada. Ela é parecida com `From`, mas retorna um `Result` em vez de
+// retornar diretamente o tipo de destino.
+// Documentação: https://doc.rust-lang.org/std/convert/trait.TryFrom.html
 
 #![allow(clippy::useless_vec)]
 use std::convert::{TryFrom, TryInto};
@@ -14,32 +13,32 @@ struct Color {
     blue: u8,
 }
 
-// We will use this error type for the `TryFrom` conversions.
+// Usaremos este tipo de erro nas conversões com `TryFrom`.
 #[derive(Debug, PartialEq)]
 enum IntoColorError {
-    // Incorrect length of slice
+    // Tamanho incorreto do slice
     BadLen,
-    // Integer conversion error
+    // Erro de conversão de inteiro
     IntConversion,
 }
 
-// TODO: Tuple implementation.
-// Correct RGB color values must be integers in the 0..=255 range.
+// TODO: Implemente a conversão a partir de uma tupla.
+// Valores RGB válidos devem ser inteiros no intervalo 0..=255.
 impl TryFrom<(i16, i16, i16)> for Color {
     type Error = IntoColorError;
 
     fn try_from(tuple: (i16, i16, i16)) -> Result<Self, Self::Error> {}
 }
 
-// TODO: Array implementation.
+// TODO: Implemente a conversão a partir de um array.
 impl TryFrom<[i16; 3]> for Color {
     type Error = IntoColorError;
 
     fn try_from(arr: [i16; 3]) -> Result<Self, Self::Error> {}
 }
 
-// TODO: Slice implementation.
-// This implementation needs to check the slice length.
+// TODO: Implemente a conversão a partir de um slice.
+// Esta implementação precisa verificar o tamanho do slice.
 impl TryFrom<&[i16]> for Color {
     type Error = IntoColorError;
 
@@ -47,19 +46,19 @@ impl TryFrom<&[i16]> for Color {
 }
 
 fn main() {
-    // Using the `try_from` function.
+    // Usando a função `try_from`.
     let c1 = Color::try_from((183, 65, 14));
     println!("{c1:?}");
 
-    // Since `TryFrom` is implemented for `Color`, we can use `TryInto`.
+    // Como `TryFrom` foi implementada para `Color`, também podemos usar `TryInto`.
     let c2: Result<Color, _> = [183, 65, 14].try_into();
     println!("{c2:?}");
 
     let v = vec![183, 65, 14];
-    // With slice we should use the `try_from` function
+    // Com slices, podemos usar a função `try_from`
     let c3 = Color::try_from(&v[..]);
     println!("{c3:?}");
-    // or put the slice within round brackets and use `try_into`.
+    // ou colocar o slice entre parênteses e usar `try_into`.
     let c4: Result<Color, _> = (&v[..]).try_into();
     println!("{c4:?}");
 }

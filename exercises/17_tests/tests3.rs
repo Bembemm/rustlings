@@ -4,11 +4,11 @@ struct Rectangle {
 }
 
 impl Rectangle {
-    // Don't change this function.
+    // Não altere esta função.
     fn new(width: i32, height: i32) -> Self {
         if width <= 0 || height <= 0 {
-            // Returning a `Result` would be better here. But we want to learn
-            // how to test functions that can panic.
+            // Retornar um `Result` seria melhor aqui, mas queremos aprender
+            // a testar funções que podem causar `panic`.
             panic!("Rectangle width and height must be positive");
         }
 
@@ -17,7 +17,7 @@ impl Rectangle {
 }
 
 fn main() {
-    // You can optionally experiment here.
+    // Se quiser, você pode fazer experimentos aqui.
 }
 
 #[cfg(test)]
@@ -26,22 +26,22 @@ mod tests {
 
     #[test]
     fn correct_width_and_height() {
-        // TODO: This test should check if the rectangle has the size that we
-        // pass to its constructor.
+        // TODO: Este teste deve verificar se o retângulo possui as dimensões
+        // fornecidas ao construtor.
         let rect = Rectangle::new(10, 20);
-        assert_eq!(todo!(), 10); // Check width
-        assert_eq!(todo!(), 20); // Check height
+        assert_eq!(todo!(), 10); // Verifique a largura
+        assert_eq!(todo!(), 20); // Verifique a altura
     }
 
-    // TODO: This test should check if the program panics when we try to create
-    // a rectangle with negative width.
+    // TODO: Este teste deve verificar se ocorre `panic` ao tentar criar
+    // um retângulo com largura negativa.
     #[test]
     fn negative_width() {
         let _rect = Rectangle::new(-10, 10);
     }
 
-    // TODO: This test should check if the program panics when we try to create
-    // a rectangle with negative height.
+    // TODO: Este teste deve verificar se ocorre `panic` ao tentar criar
+    // um retângulo com altura negativa.
     #[test]
     fn negative_height() {
         let _rect = Rectangle::new(10, -10);

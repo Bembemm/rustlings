@@ -1,11 +1,12 @@
-# Generics
+# Genéricos
 
-Generics is the topic of generalizing types and functionalities to broader cases.
-This is extremely useful for reducing code duplication in many ways, but can call for some rather involved syntax.
-Namely, being generic requires taking great care to specify over which types a generic type is actually considered valid.
-The simplest and most common use of generics is for type parameters.
+Genéricos permitem escrever tipos e funcionalidades que funcionam com vários tipos diferentes.
 
-## Further information
+Isso é muito útil para reduzir duplicação de código, embora possa exigir uma sintaxe mais elaborada. Ao escrever código genérico, é importante especificar para quais tipos aquela implementação é válida.
 
-- [Generic Data Types](https://doc.rust-lang.org/book/ch10-01-syntax.html)
-- [Bounds](https://doc.rust-lang.org/rust-by-example/generics/bounds.html)
+O uso mais simples e comum de genéricos ocorre com parâmetros de tipo.
+
+## Para saber mais
+
+- [Tipos de dados genéricos](https://doc.rust-lang.org/book/ch10-01-syntax.html)
+- [Limites de tipos (*bounds*)](https://doc.rust-lang.org/rust-by-example/generics/bounds.html)

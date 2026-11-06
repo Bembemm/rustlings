@@ -21,9 +21,22 @@ O projeto original e seus autores mantêm os créditos; este fork preserva a [li
 | 10 — Módulos | Traduzido |
 | 11 — HashMap | Traduzido |
 | 12 — Option | Traduzido |
-| Demais módulos, dicas e interface de terminal | Ainda em inglês |
+| 13 — Tratamento de erros | Traduzido |
+| 14 — Genéricos | Traduzido |
+| 15 — Traits | Traduzido |
+| 16 — Lifetimes | Traduzido |
+| 17 — Testes | Traduzido |
+| 18 — Iteradores | Traduzido |
+| 19 — Ponteiros inteligentes | Traduzido |
+| 20 — Threads | Traduzido |
+| 21 — Macros | Traduzido |
+| 22 — Clippy | Traduzido |
+| 23 — Conversões | Traduzido |
+| 24 — Async | Traduzido |
+| Quizzes | Traduzido |
+| Dicas (`hint`) e interface do terminal | Ainda em inglês |
 
-**Tradução em andamento.** Os módulos 00 a 12 já têm comentários e documentação em português. As mensagens usadas como dados pelos testes foram mantidas em inglês para preservar os resultados esperados. Os erros intencionais dos exercícios foram preservados. Não traduzimos palavras-chave da linguagem, nomes de arquivos ou identificadores essenciais para resolver os desafios.
+**Tradução em andamento.** Os módulos 00 a 24 e os quizzes já têm comentários e documentação em português. As mensagens usadas como dados pelos testes foram mantidas em inglês para preservar os resultados esperados. Os erros intencionais dos exercícios foram preservados. Não traduzimos palavras-chave da linguagem, nomes de arquivos ou identificadores essenciais para resolver os desafios.
 
 ## Como começar
 
@@ -37,7 +50,7 @@ cargo run
 
 Leia os arquivos `README.md` de cada módulo e resolva os desafios `.rs`, sem consultar as soluções antes de tentar. Confira também a [correspondência com os capítulos do livro](exercises/README.md).
 
-**Observação:** as mensagens da interface e as dicas exibidas pelo comando `hint` ainda não foram traduzidas; esta primeira etapa traduz instruções e comentários dos exercícios.
+**Observação:** as mensagens da interface e as dicas exibidas pelo comando `hint` ainda não foram traduzidas. Os exercícios, READMEs dos módulos e quizzes já estão em português.
 
 ## Links
 

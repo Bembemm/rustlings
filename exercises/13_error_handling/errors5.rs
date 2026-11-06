@@ -1,15 +1,13 @@
-// This exercise is an altered version of the `errors4` exercise. It uses some
-// concepts that we won't get to until later in the course, like `Box` and the
-// `From` trait. It's not important to understand them in detail right now, but
-// you can read ahead if you like. For now, think of the `Box<dyn ???>` type as
-// an "I want anything that does ???" type.
+// Este exercício é uma versão modificada de `errors4`. Ele utiliza alguns
+// conceitos que aparecem mais adiante, como `Box` e a trait `From`. Não é
+// necessário entendê-los em detalhes agora. Por enquanto, pense em
+// `Box<dyn ???>` como "quero qualquer tipo que faça ???".
 //
-// In short, this particular use case for boxes is for when you want to own a
-// value and you care only that it is a type which implements a particular
-// trait. To do so, the `Box` is declared as of type `Box<dyn Trait>` where
-// `Trait` is the trait the compiler looks for on any value used in that
-// context. For this exercise, that context is the potential errors which
-// can be returned in a `Result`.
+// Neste caso, usamos `Box` quando queremos possuir um valor, mas só nos importa
+// que o tipo desse valor implemente uma determinada trait. Para isso, declaramos
+// `Box<dyn Trait>`, onde `Trait` é o comportamento exigido pelo compilador.
+// Aqui, estamos falando dos diferentes erros que podem ser retornados em um
+// `Result`.
 
 use std::error::Error;
 use std::fmt;
@@ -20,7 +18,7 @@ enum CreationError {
     Zero,
 }
 
-// This is required so that `CreationError` can implement `Error`.
+// Isto é necessário para que `CreationError` possa implementar `Error`.
 impl fmt::Display for CreationError {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         let description = match *self {
@@ -46,8 +44,9 @@ impl PositiveNonzeroInteger {
     }
 }
 
-// TODO: Add the correct return type `Result<(), Box<dyn ???>>`. What can we
-// use to describe both errors? Is there a trait which both errors implement?
+// TODO: Adicione o tipo de retorno correto: `Result<(), Box<dyn ???>>`.
+// O que pode representar os dois tipos de erro? Existe uma trait implementada
+// por ambos?
 fn main() {
     let pretend_user_input = "42";
     let x: i64 = pretend_user_input.parse()?;

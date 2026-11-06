@@ -1,13 +1,12 @@
-# Async
+# Programação assíncrona
 
-Asynchronous programming is a model where tasks are delegated to a runtime that executes them concurrently.
-It is particularly efficient for applications where many independent IO-operations are performed, e.g. web servers.
+Programação assíncrona é um modelo em que tarefas são delegadas a um *runtime*, que pode executá-las de forma concorrente.
 
-Rust provides the necessary primitives to do asynchronous programming in the language.
-However, Rust's standard library does not include a runtime.
-For these exercises, we will use the mainstream runtime called `tokio`.
+Esse modelo é especialmente eficiente para aplicações que realizam muitas operações independentes de entrada e saída, como servidores web.
 
-## Further information
+Rust fornece os recursos necessários para escrever código assíncrono, mas a biblioteca padrão não inclui um runtime. Nestes exercícios, utilizaremos o runtime `tokio`.
 
-- [Fundamentals of Asynchronous Programming](https://doc.rust-lang.org/book/ch17-00-async-await.html)
-- [Tokio documentation](https://docs.rs/tokio/latest/tokio/)
+## Para saber mais
+
+- [Fundamentos de programação assíncrona](https://doc.rust-lang.org/book/ch17-00-async-await.html)
+- [Documentação do Tokio](https://docs.rs/tokio/latest/tokio/)

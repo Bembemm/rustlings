@@ -1,21 +1,18 @@
-// This is a quiz for the following sections:
+// Este quiz revisa os seguintes assuntos:
 // - Strings
-// - Vecs
-// - Move semantics
-// - Modules
-// - Enums
+// - Vetores (`Vec`)
+// - Semântica de movimentação
+// - Módulos
+// - Enumerações
 //
-// Let's build a little machine in the form of a function. As input, we're going
-// to give a list of strings and commands. These commands determine what action
-// is going to be applied to the string. It can either be:
-// - Uppercase the string
-// - Trim the string
-// - Append "bar" to the string a specified amount of times
+// Vamos construir uma pequena máquina em forma de função. A entrada será uma
+// lista de strings e comandos. Cada comando define uma transformação:
+// - Converter a string para maiúsculas;
+// - Remover espaços nas extremidades;
+// - Adicionar "bar" ao final uma determinada quantidade de vezes.
 //
-// The exact form of this will be:
-// - The input is going to be a Vector of 2-length tuples,
-//   the first element is the string, the second one is the command.
-// - The output element is going to be a vector of strings.
+// A entrada será um vetor de tuplas com dois elementos: a string e o comando.
+// A saída será um vetor de strings.
 
 enum Command {
     Uppercase,
@@ -26,17 +23,17 @@ enum Command {
 mod my_module {
     use super::Command;
 
-    // TODO: Complete the function as described above.
+    // TODO: Complete a função conforme descrito acima.
     // pub fn transformer(input: ???) -> ??? { ??? }
 }
 
 fn main() {
-    // You can optionally experiment here.
+    // Se quiser, você pode fazer experimentos aqui.
 }
 
 #[cfg(test)]
 mod tests {
-    // TODO: What do we need to import to have `transformer` in scope?
+    // TODO: O que precisamos importar para que `transformer` fique no escopo?
     // use ???;
     use super::Command;
 

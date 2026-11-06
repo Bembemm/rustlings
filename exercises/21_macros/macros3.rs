@@ -1,9 +1,9 @@
-// TODO: Fix the compiler error without taking the macro definition out of this
-// module.
+// TODO: Corrija o erro de compilação sem retirar a definição da macro deste
+// módulo.
 mod macros {
     macro_rules! my_macro {
         () => {
-            println!("Check out my macro!");
+            println!("Veja minha macro!");
         };
     }
 }

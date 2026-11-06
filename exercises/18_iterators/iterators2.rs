@@ -1,7 +1,7 @@
-// In this exercise, you'll learn some of the unique advantages that iterators
-// can offer.
+// Neste exercício, você conhecerá algumas das vantagens que os iteradores
+// oferecem.
 
-// TODO: Complete the `capitalize_first` function.
+// TODO: Complete a função `capitalize_first`.
 // "hello" -> "Hello"
 fn capitalize_first(input: &str) -> String {
     let mut chars = input.chars();
@@ -11,22 +11,22 @@ fn capitalize_first(input: &str) -> String {
     }
 }
 
-// TODO: Apply the `capitalize_first` function to a slice of string slices.
-// Return a vector of strings.
+// TODO: Aplique `capitalize_first` a um slice de `&str`.
+// Retorne um vetor de `String`.
 // ["hello", "world"] -> ["Hello", "World"]
 fn capitalize_words_vector(words: &[&str]) -> Vec<String> {
     // ???
 }
 
-// TODO: Apply the `capitalize_first` function again to a slice of string
-// slices. Return a single string.
+// TODO: Aplique novamente `capitalize_first` a um slice de `&str`.
+// Desta vez, retorne uma única `String`.
 // ["hello", " ", "world"] -> "Hello World"
 fn capitalize_words_string(words: &[&str]) -> String {
     // ???
 }
 
 fn main() {
-    // You can optionally experiment here.
+    // Se quiser, você pode fazer experimentos aqui.
 }
 
 #[cfg(test)]

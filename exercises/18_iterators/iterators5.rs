@@ -1,8 +1,8 @@
-// Let's define a simple model to track Rustlings' exercise progress. Progress
-// will be modelled using a hash map. The name of the exercise is the key and
-// the progress is the value. Two counting functions were created to count the
-// number of exercises with a given progress. Recreate this counting
-// functionality using iterators. Try to not use imperative loops (for/while).
+// Vamos criar um modelo simples para acompanhar o progresso dos exercícios.
+// Usaremos um hash map: o nome do exercício será a chave e o progresso será
+// o valor. Duas funções contam quantos exercícios estão em cada estado.
+// Recrie essa contagem usando iteradores e tente evitar laços imperativos
+// (`for`/`while`).
 
 use std::collections::HashMap;
 
@@ -23,10 +23,10 @@ fn count_for(map: &HashMap<String, Progress>, value: Progress) -> usize {
     count
 }
 
-// TODO: Implement the functionality of `count_for` but with an iterator instead
-// of a `for` loop.
+// TODO: Implemente o comportamento de `count_for` usando um iterador em vez
+// de um laço `for`.
 fn count_iterator(map: &HashMap<String, Progress>, value: Progress) -> usize {
-    // `map` is a hash map with `String` keys and `Progress` values.
+    // `map` é um hash map com chaves `String` e valores `Progress`.
     // map = { "variables1": Complete, "conversions3": None, … }
 }
 
@@ -42,16 +42,16 @@ fn count_collection_for(collection: &[HashMap<String, Progress>], value: Progres
     count
 }
 
-// TODO: Implement the functionality of `count_collection_for` but with an
-// iterator instead of a `for` loop.
+// TODO: Implemente o comportamento de `count_collection_for` usando um
+// iterador em vez de um laço `for`.
 fn count_collection_iterator(collection: &[HashMap<String, Progress>], value: Progress) -> usize {
-    // `collection` is a slice of hash maps.
+    // `collection` é um slice de hash maps.
     // collection = [{ "variables1": Complete, "conversions3": None, … },
     //               { "variables2": Complete, … }, … ]
 }
 
 fn main() {
-    // You can optionally experiment here.
+    // Se quiser, você pode fazer experimentos aqui.
 }
 
 #[cfg(test)]

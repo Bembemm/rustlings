@@ -1,34 +1,33 @@
-// In this exercise, we are given a `Vec` of `u32` called `numbers` with values
-// ranging from 0 to 99. We would like to use this set of numbers within 8
-// different threads simultaneously. Each thread is going to get the sum of
-// every eighth value with an offset.
+// Neste exercício, temos um `Vec<u32>` chamado `numbers`, com valores de 0 a 99,
+// e queremos compartilhá-lo entre 8 threads. Cada thread somará um conjunto
+// diferente de valores usando um deslocamento.
 //
-// The first thread (offset 0), will sum 0, 8, 16, …
-// The second thread (offset 1), will sum 1, 9, 17, …
-// The third thread (offset 2), will sum 2, 10, 18, …
+// A primeira thread (offset 0) soma 0, 8, 16, …
+// A segunda (offset 1) soma 1, 9, 17, …
+// A terceira (offset 2) soma 2, 10, 18, …
 // …
-// The eighth thread (offset 7), will sum 7, 15, 23, …
+// A oitava (offset 7) soma 7, 15, 23, …
 //
-// Each thread should own a reference-counting pointer to the vector of
-// numbers. But `Rc` isn't thread-safe. Therefore, we need to use `Arc`.
+// Cada thread precisa possuir um ponteiro com contagem de referências para o
+// vetor. Como `Rc` não é seguro entre threads, usaremos `Arc`.
 //
-// Don't get distracted by how threads are spawned and joined. We will practice
-// that later in the exercises about threads.
+// Não se preocupe ainda com a criação e sincronização das threads; isso será
+// praticado mais adiante.
 
-// Don't change the lines below.
+// Não altere as linhas abaixo.
 #![forbid(unused_imports)]
 use std::{sync::Arc, thread};
 
 fn main() {
     let numbers: Vec<_> = (0..100u32).collect();
 
-    // TODO: Define `shared_numbers` by using `Arc`.
+    // TODO: Defina `shared_numbers` usando `Arc`.
     // let shared_numbers = ???;
 
     let mut join_handles = Vec::new();
 
     for offset in 0..8 {
-        // TODO: Define `child_numbers` using `shared_numbers`.
+        // TODO: Defina `child_numbers` usando `shared_numbers`.
         // let child_numbers = ???;
 
         let handle = thread::spawn(move || {

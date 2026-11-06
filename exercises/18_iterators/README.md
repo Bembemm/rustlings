@@ -1,8 +1,10 @@
-# Iterators
+# Iteradores
 
-This section will teach you about Iterators.
+Nesta seção, você aprenderá a usar iteradores em Rust.
 
-## Further information
+Iteradores permitem percorrer coleções e transformar seus elementos de forma expressiva, muitas vezes sem precisar escrever laços imperativos manualmente.
 
-- [Iterator](https://doc.rust-lang.org/book/ch13-02-iterators.html)
-- [Iterator documentation](https://doc.rust-lang.org/stable/std/iter/)
+## Para saber mais
+
+- [Iteradores](https://doc.rust-lang.org/book/ch13-02-iterators.html)
+- [Documentação de `Iterator`](https://doc.rust-lang.org/stable/std/iter/)

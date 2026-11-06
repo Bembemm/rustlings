@@ -1,15 +1,13 @@
 # Macros
 
-Rust's macro system is very powerful, but also kind of difficult to wrap your
-head around. We're not going to teach you how to write your own fully-featured
-macros. Instead, we'll show you how to use and create them.
+O sistema de macros do Rust é muito poderoso, mas pode ser difícil de entender no início.
 
-If you'd like to learn more about writing your own macros, the
-[macrokata](https://github.com/tfpk/macrokata) project has a similar style
-of exercises to Rustlings, but is all about learning to write Macros.
+Aqui não vamos construir macros extremamente complexas. O objetivo é aprender a usar macros e criar versões simples delas.
 
-## Further information
+Se quiser aprofundar o assunto, o projeto [macrokata](https://github.com/tfpk/macrokata) possui exercícios no estilo do Rustlings dedicados à criação de macros.
 
-- [The Rust Book - Macros](https://doc.rust-lang.org/book/ch20-05-macros.html)
+## Para saber mais
+
+- [Macros no Rust Book](https://doc.rust-lang.org/book/ch20-05-macros.html)
 - [The Little Book of Rust Macros](https://veykril.github.io/tlborm/)
-- [Rust by Example - macro_rules!](https://doc.rust-lang.org/rust-by-example/macros.html)
+- [`macro_rules!` no Rust by Example](https://doc.rust-lang.org/rust-by-example/macros.html)

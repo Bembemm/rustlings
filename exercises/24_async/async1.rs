@@ -1,36 +1,35 @@
-// Alice is an elementary school teacher who needs to calculate the mean test
-// score for three classes she teaches. Instead of calculating them one after
-// the other, she decides to ask her friends Bob and Catherine for help. Working
-// together, they can finish the job much faster.
+// Alice é professora e precisa calcular a média das notas de três turmas.
+// Em vez de calcular uma turma por vez, ela pede ajuda a Bob e Catherine.
+// Trabalhando ao mesmo tempo, eles terminam a tarefa mais rapidamente.
 //
-// Let's simulate this using asynchronous programming. Each person is
-// represented as an asynchronous task, which can be executed concurrently.
+// Vamos simular isso com programação assíncrona. Cada pessoa será representada
+// por uma tarefa assíncrona que pode ser executada concorrentemente.
 
-// Async tasks need to be executed by a "runtime", which is not provided by
-// Rust's standard library. Here, we use the mainstream runtime `tokio`.
-// The macro `tokio::main` wraps the entire main function in a runtime.
+// Tarefas assíncronas precisam de um "runtime", que não faz parte da biblioteca
+// padrão do Rust. Aqui usamos o popular runtime `tokio`.
+// A macro `tokio::main` executa toda a função `main` dentro desse runtime.
 #[tokio::main]
 async fn main() {
     let mean_score_a = tokio::spawn(calculate_mean_score("scores_class_a.txt"));
     let mean_score_b = tokio::spawn(calculate_mean_score("scores_class_b.txt"));
     let mean_score_c = tokio::spawn(calculate_mean_score("scores_class_c.txt"));
 
-    // TODO: Await the spawned tasks to check their results.
+    // TODO: Aguarde (`await`) as tarefas criadas para verificar seus resultados.
     assert_eq!(mean_score_a, 84); // alice
     assert_eq!(mean_score_b, 89); // bob
     assert_eq!(mean_score_c, 76); // catherine
 }
 
-// TODO: Fix the compiler errors by making the spawned function async.
+// TODO: Corrija os erros de compilação tornando a função executada uma função `async`.
 fn calculate_mean_score(scores_file: &str) -> usize {
-    // Read the file asynchronously
+    // Leia o arquivo de forma assíncrona
     let file = tokio::fs::read_to_string(scores_file).await.unwrap();
 
-    // Initialize the sum and the number of scores
+    // Inicialize a soma e a quantidade de notas
     let mut sum = 0;
     let mut n = 0;
     for line in file.lines() {
-        // Parse every line as a score
+        // Converta cada linha em uma nota
         let score = line.parse::<usize>().unwrap();
         sum += score;
         n += 1;

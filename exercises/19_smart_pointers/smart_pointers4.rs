@@ -1,7 +1,7 @@
-// This exercise explores the `Cow` (Clone-On-Write) smart pointer. It can
-// enclose and provide immutable access to borrowed data and clone the data
-// lazily when mutation or ownership is required. The type is designed to work
-// with general borrowed data via the `Borrow` trait.
+// Este exercício explora o ponteiro inteligente `Cow` (*Clone-On-Write*).
+// Ele pode fornecer acesso imutável a dados emprestados e cloná-los somente
+// quando uma mutação ou a posse dos dados for necessária. O tipo funciona com
+// dados emprestados de forma genérica por meio da trait `Borrow`.
 
 use std::borrow::Cow;
 
@@ -9,14 +9,14 @@ fn abs_all(input: &mut Cow<[i32]>) {
     for ind in 0..input.len() {
         let value = input[ind];
         if value < 0 {
-            // Clones into a vector if not already owned.
+            // Clona para um vetor caso os dados ainda não sejam possuídos.
             input.to_mut()[ind] = -value;
         }
     }
 }
 
 fn main() {
-    // You can optionally experiment here.
+    // Se quiser, você pode fazer experimentos aqui.
 }
 
 #[cfg(test)]
@@ -25,7 +25,7 @@ mod tests {
 
     #[test]
     fn reference_mutation() {
-        // Clone occurs because `input` needs to be mutated.
+        // O clone ocorre porque `input` precisa ser modificado.
         let vec = vec![-1, 0, 1];
         let mut input = Cow::from(&vec);
         abs_all(&mut input);
@@ -34,36 +34,35 @@ mod tests {
 
     #[test]
     fn reference_no_mutation() {
-        // No clone occurs because `input` doesn't need to be mutated.
+        // Nenhum clone ocorre porque `input` não precisa ser modificado.
         let vec = vec![0, 1, 2];
         let mut input = Cow::from(&vec);
         abs_all(&mut input);
-        // TODO: Replace `todo!()` with `Cow::Owned(_)` or `Cow::Borrowed(_)`.
+        // TODO: Substitua `todo!()` por `Cow::Owned(_)` ou `Cow::Borrowed(_)`.
         assert!(matches!(input, todo!()));
     }
 
     #[test]
     fn owned_no_mutation() {
-        // We can also pass `vec` without `&` so `Cow` owns it directly. In this
-        // case, no mutation occurs (all numbers are already absolute) and thus
-        // also no clone. But the result is still owned because it was never
-        // borrowed or mutated.
+        // Também podemos passar `vec` sem `&`, fazendo com que `Cow` possua os dados
+        // diretamente. Neste caso não há mutação e também não há clone, mas o
+        // resultado continua sendo `Owned`, pois os dados nunca foram emprestados.
         let vec = vec![0, 1, 2];
         let mut input = Cow::from(vec);
         abs_all(&mut input);
-        // TODO: Replace `todo!()` with `Cow::Owned(_)` or `Cow::Borrowed(_)`.
+        // TODO: Substitua `todo!()` por `Cow::Owned(_)` ou `Cow::Borrowed(_)`.
         assert!(matches!(input, todo!()));
     }
 
     #[test]
     fn owned_mutation() {
-        // Of course this is also the case if a mutation does occur (not all
-        // numbers are absolute). In this case, the call to `to_mut()` in the
-        // `abs_all` function returns a reference to the same data as before.
+        // Isso também vale quando ocorre uma mutação. Como os dados já pertencem ao
+        // `Cow`, `to_mut()` pode retornar uma referência mutável para os mesmos
+        // dados, sem precisar cloná-los.
         let vec = vec![-1, 0, 1];
         let mut input = Cow::from(vec);
         abs_all(&mut input);
-        // TODO: Replace `todo!()` with `Cow::Owned(_)` or `Cow::Borrowed(_)`.
+        // TODO: Substitua `todo!()` por `Cow::Owned(_)` ou `Cow::Borrowed(_)`.
         assert!(matches!(input, todo!()));
     }
 }
