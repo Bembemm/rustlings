@@ -47,7 +47,7 @@ impl<'a> WatchState<'a> {
         manual_run: bool,
     ) -> Result<Self> {
         let term_width = terminal::size()
-            .context("Failed to get the terminal size")?
+            .context("Falha ao obter o tamanho do terminal")?
             .0;
 
         let (terminal_event_unpause_sender, terminal_event_unpause_receiver) = sync_channel(0);
@@ -60,7 +60,7 @@ impl<'a> WatchState<'a> {
                     manual_run,
                 );
             })
-            .context("Failed to spawn a thread to handle terminal events")?;
+            .context("Falha ao criar uma thread para processar eventos do terminal")?;
 
         Ok(Self {
             app_state,
@@ -79,7 +79,7 @@ impl<'a> WatchState<'a> {
 
         writeln!(
             stdout,
-            "\nChecking the exercise `{}`. Please wait…",
+            "\nVerificando o exercício `{}`. Aguarde…",
             self.app_state.current_exercise().name,
         )?;
 
@@ -115,9 +115,9 @@ impl<'a> WatchState<'a> {
     pub fn reset_exercise(&mut self, stdout: &mut StdoutLock) -> Result<()> {
         clear_terminal(stdout)?;
 
-        stdout.write_all(b"Resetting will undo all your changes to the file ")?;
+        stdout.write_all("Restaurar desfará todas as alterações feitas no arquivo ".as_bytes())?;
         stdout.write_all(self.app_state.current_exercise().path.as_bytes())?;
-        stdout.write_all(b"\nReset (y/n)? ")?;
+        stdout.write_all("\nRestaurar (s/n)? ".as_bytes())?;
         stdout.flush()?;
 
         {
@@ -126,10 +126,10 @@ impl<'a> WatchState<'a> {
             loop {
                 stdin
                     .read_exact(&mut answer)
-                    .context("Failed to read the user's input")?;
+                    .context("Falha ao ler a entrada do usuário")?;
 
                 match answer[0] {
-                    b'y' | b'Y' => {
+                    b'y' | b'Y' | b's' | b'S' => {
                         self.app_state.close_editor()?;
                         self.app_state.reset_current_exercise()?;
 
@@ -186,29 +186,29 @@ impl<'a> WatchState<'a> {
             stdout.queue(ResetColor)?;
             stdout.write_all(b":")?;
             stdout.queue(SetAttribute(Attribute::Underlined))?;
-            stdout.write_all(b"next")?;
+            stdout.write_all("próximo".as_bytes())?;
             stdout.queue(ResetColor)?;
             stdout.write_all(b" / ")?;
         }
 
-        let mut show_key = |key, postfix| {
+        let mut show_key = |key, postfix: &str| {
             stdout.queue(SetAttribute(Attribute::Bold))?;
             stdout.write_all(&[key])?;
             stdout.queue(ResetColor)?;
-            stdout.write_all(postfix)
+            stdout.write_all(postfix.as_bytes())
         };
 
         if self.manual_run {
-            show_key(b'r', b":run / ")?;
+            show_key(b'r', ":executar / ")?;
         }
 
         if !self.show_hint {
-            show_key(b'h', b":hint / ")?;
+            show_key(b'h', ":dica / ")?;
         }
 
-        show_key(b'l', b":list / ")?;
-        show_key(b'x', b":reset / ")?;
-        show_key(b'q', b":quit ? ")?;
+        show_key(b'l', ":lista / ")?;
+        show_key(b'x', ":restaurar / ")?;
+        show_key(b'q', ":sair ? ")?;
 
         stdout.flush()
     }
@@ -224,7 +224,7 @@ impl<'a> WatchState<'a> {
             stdout
                 .queue(SetAttributes(HEADING_ATTRIBUTES))?
                 .queue(SetForegroundColor(Color::Cyan))?;
-            stdout.write_all(b"Hint")?;
+            stdout.write_all("Dica".as_bytes())?;
             stdout.queue(ResetColor)?;
             stdout.write_all(b"\n")?;
 
@@ -242,7 +242,7 @@ impl<'a> WatchState<'a> {
             stdout
                 .queue(SetAttribute(Attribute::Bold))?
                 .queue(SetForegroundColor(Color::Green))?;
-            stdout.write_all("Exercise done ✓".as_bytes())?;
+            stdout.write_all("Exercício concluído ✓".as_bytes())?;
             stdout.queue(ResetColor)?;
             stdout.write_all(b"\n")?;
 
@@ -251,7 +251,7 @@ impl<'a> WatchState<'a> {
             }
 
             stdout.write_all(
-                "When done experimenting, enter `n` to move on to the next exercise 🦀\n\n"
+                "Quando terminar de experimentar, pressione `n` para avançar ao próximo exercício 🦀\n\n"
                     .as_bytes(),
             )?;
         }
@@ -263,7 +263,7 @@ impl<'a> WatchState<'a> {
             self.term_width,
         )?;
 
-        stdout.write_all(b"\nCurrent exercise: ")?;
+        stdout.write_all("\nExercício atual: ".as_bytes())?;
         self.app_state
             .current_exercise()
             .terminal_file_link(stdout, self.app_state.emit_file_links())?;
