@@ -42,7 +42,7 @@ fn main() -> Result<ExitCode> {
 
     'priority_cmd: {
         match args.command {
-            Some(Command::Init) => init::init().context("Initialization failed")?,
+            Some(Command::Init) => init::init().context("Falha ao inicializar")?,
             Some(Command::Dev(dev_command)) => dev_command.run()?,
             _ => break 'priority_cmd,
         }
@@ -85,7 +85,7 @@ fn main() -> Result<ExitCode> {
 
                 let welcome_message = welcome_message.trim_ascii();
                 stdout.write_all(welcome_message)?;
-                stdout.write_all(b"\n\nPress ENTER to continue ")?;
+                stdout.write_all("\n\nPressione ENTER para continuar ".as_bytes())?;
                 press_enter_prompt(&mut stdout)?;
                 clear_terminal(&mut stdout)?;
                 // Flush to be able to show errors occurring before printing a newline to stdout.
@@ -98,7 +98,7 @@ fn main() -> Result<ExitCode> {
     match args.command {
         None => {
             if !io::stdout().is_terminal() {
-                bail!("Unsupported or missing terminal/TTY");
+                bail!("Terminal/TTY ausente ou não suportado");
             }
 
             let notify_exercise_names = if args.manual_run {
@@ -134,11 +134,11 @@ fn main() -> Result<ExitCode> {
                 stdout.write_all(b"\n\n")?;
                 let pending = app_state.n_pending();
                 if pending == 1 {
-                    stdout.write_all(b"One exercise pending: ")?;
+                    stdout.write_all("Um exercício pendente: ".as_bytes())?;
                 } else {
                     write!(
                         stdout,
-                        "{pending}/{} exercises pending. The first: ",
+                        "{pending}/{} exercícios pendentes. O primeiro: ",
                         app_state.exercises().len(),
                     )?;
                 }
@@ -158,9 +158,9 @@ fn main() -> Result<ExitCode> {
 
             let current_exercise = app_state.current_exercise();
             let mut stdout = io::stdout().lock();
-            stdout.write_all(b"The exercise ")?;
+            stdout.write_all("O exercício ".as_bytes())?;
             current_exercise.terminal_file_link(&mut stdout, app_state.emit_file_links())?;
-            stdout.write_all(b" has been reset\n")?;
+            stdout.write_all(" foi restaurado\n".as_bytes())?;
         }
         Some(Command::Hint { name }) => {
             if let Some(name) = name {
@@ -169,10 +169,10 @@ fn main() -> Result<ExitCode> {
 
             let current_exercise = app_state.current_exercise();
             let mut stdout = io::stdout().lock();
-            stdout.write_all(b"Current exercise: ")?;
+            stdout.write_all("Exercício atual: ".as_bytes())?;
             current_exercise.terminal_file_link(&mut stdout, app_state.emit_file_links())?;
 
-            stdout.write_all(b"\n\nHint:\n")?;
+            stdout.write_all("\n\nDica:\n".as_bytes())?;
             stdout.write_all(current_exercise.hint.as_bytes().trim_ascii())?;
             stdout.write_all(b"\n")?;
         }
@@ -184,18 +184,13 @@ fn main() -> Result<ExitCode> {
 }
 
 const OLD_METHOD_ERR: &str =
-    "You are trying to run Rustlings using the old method before version 6.
-The new method doesn't include cloning the Rustlings' repository.
-Please follow the instructions in `README.md`:
-https://github.com/rust-lang/rustlings#getting-started";
+    "Você está tentando executar o Rustlings usando o método antigo, anterior à versão 6.\nO método atual não exige clonar o repositório do Rustlings.\nSiga as instruções no `README.md`:\nhttps://github.com/rust-lang/rustlings#getting-started";
 
 const FORMAT_VERSION_HIGHER_ERR: &str =
-    "The format version specified in the `info.toml` file is higher than the last one supported.
-It is possible that you have an outdated version of Rustlings.
-Try to install the latest Rustlings version first.";
+    "A versão de formato indicada em `info.toml` é mais nova que a suportada por esta versão.\nÉ possível que seu Rustlings esteja desatualizado.\nInstale a versão mais recente do Rustlings e tente novamente.";
 
 const PRE_INIT_MSG: &str = r"
-       Welcome to...
+       Bem-vindo ao...
                  _   _ _
   _ __ _   _ ___| |_| (_)_ __   __ _ ___
  | '__| | | / __| __| | | '_ \ / _` / __|
@@ -203,5 +198,4 @@ const PRE_INIT_MSG: &str = r"
  |_|   \__,_|___/\__|_|_|_| |_|\__, |___/
                                |___/
 
-The `exercises/` directory couldn't be found in the current directory.
-If you are just starting with Rustlings, run the command `rustlings init` to initialize it.";
+A pasta `exercises/` não foi encontrada no diretório atual.\nSe você está começando agora, execute `rustlings init` para inicializar os exercícios.";
